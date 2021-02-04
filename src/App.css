@@ -66,10 +66,10 @@
 
 @media only screen and (max-width: 900px) {
   .form {
-    width: 45%;
+    width: 65%;
   }
 
   .welcome__title {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
 }

@@ -8,7 +8,7 @@ import Signup from './pages/Signup'
 import Login from './pages/Login'
 import {useAuth} from './contexts/authContext'
 
-axios.defaults.baseURL = 'https://cors-anywhere.herokuapp.com/https://glacial-lake-62293.herokuapp.com/api/v1'
+// axios.defaults.baseURL = 'https://cors-anywhere.herokuapp.com/https://glacial-lake-62293.herokuapp.com/api/v1'
  
 function App() {
   const {auth} = useAuth()

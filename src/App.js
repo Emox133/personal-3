@@ -6,7 +6,7 @@ import Navbar from './components/layout/Navbar'
 import Home from './pages/Home'
 import Signup from './pages/Signup'
 import Login from './pages/Login'
-import {AuthProvider, useAuth} from './contexts/authContext'
+import {useAuth} from './contexts/authContext'
 
 axios.defaults.baseURL = 'https://cors-anywhere.herokuapp.com/https://glacial-lake-62293.herokuapp.com/'
  

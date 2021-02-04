@@ -16,7 +16,7 @@ function Navbar() {
     (<nav className="nav">
         <ul className="nav__list">
             <li className="nav__item">
-                <Link to="/signup" className="nav__link">
+                <Link to="/" className="nav__link">
                     Registracija
                 </Link>
             </li>

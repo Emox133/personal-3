@@ -57,3 +57,19 @@
   text-decoration: none;
   color: #000;
 }
+
+@media only screen and (max-width: 600px) {
+  .signup__btn, .login__btn {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .form {
+    width: 45%;
+  }
+
+  .welcome__title {
+    font-size: 1.8rem;
+  }
+}

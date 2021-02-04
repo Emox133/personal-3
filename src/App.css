@@ -1,0 +1,59 @@
+.welcome-container {
+  height: calc(100vh - 37.6px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+
+.welcome__title {
+  font-size: 2rem;
+  margin-bottom: .5rem;
+}
+
+.form input {
+  padding: .5rem .8rem;
+  border: 1px solid #ccc;
+  margin-bottom: .5rem;
+  outline: none;
+}
+
+.btn {
+  padding: .5rem .8rem;
+  border: 1px solid #ccc;
+  outline: none;
+  color: #fff;
+  background-color: teal;
+}
+
+.signup__btn, .login__btn {
+  display: block;
+  width: 30%;
+  margin: 0 auto;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav__list {
+  min-width: 200px;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  padding: .5rem 0;
+}
+
+.nav__link {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #000;
+}

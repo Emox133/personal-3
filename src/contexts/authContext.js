@@ -9,8 +9,6 @@ export function useAuth() {
 export function AuthProvider({ children }) {
   const [auth, setAuth] = useState(false)
 
-  console.log(auth)
-
   const value = {
       auth,
       setAuth

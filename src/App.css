@@ -58,6 +58,15 @@
   color: #000;
 }
 
+.signup__form span {
+  font-size: .8rem;
+  color: orangered;
+}
+
+.signup__form .error {
+  border: 1px solid orangered;
+}
+
 @media only screen and (max-width: 600px) {
   .signup__btn, .login__btn {
     width: 50%;

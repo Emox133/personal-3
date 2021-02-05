@@ -9,8 +9,11 @@ function Signup() {
       password: ''
     })
 
-    const {setAuth} = useAuth()
+    const [errors, setErrors] = useState({
+        combinedMessage: ''
+    })
 
+    const {setAuth} = useAuth()
     const history = useHistory()
 
     const handleFieldsChange = e => {
@@ -34,15 +37,20 @@ function Signup() {
                 history.push('/')
             }
         })
-        .catch(err => console.log(err.response))
+        .catch(err => {
+            const msg = err.response.data.message
+            setErrors({combinedMessage: msg})
+        })
     }
 
     return (
         <div className="welcome-container">
             <h2 className="welcome__title signup--title">Prijava</h2>
             <form className="form signup__form" onSubmit={handleSubmit}>
-                <input type="email" placeholder="E-mail" name="email" onChange={handleFieldsChange}/>
-                <input type="password" placeholder="Lozinka" name="password" onChange={handleFieldsChange}/>
+                {errors.combinedMessage ? <span>{errors.combinedMessage}</span> : null}
+                <input className={errors.combinedMessage ? 'error' : null} type="email" placeholder="E-mail" name="email" onChange={handleFieldsChange}/>
+                {errors.combinedMessage ? <span>{errors.combinedMessage}</span> : null}
+                <input className={errors.combinedMessage ? 'error' : null} type="password" placeholder="Lozinka" name="password" onChange={handleFieldsChange}/>
 
                 <button className="signup__btn btn" type="submit">Potvrdi</button>
             </form>

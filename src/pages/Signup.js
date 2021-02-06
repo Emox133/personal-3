@@ -47,7 +47,7 @@ function Signup() {
             }
         })
         .catch(err => {
-            const errObj = err.response.data.error.errors
+            const errObj = err.response.data.error.errors ? err.response.data.error.errors : {}
             setErrors({...errObj})
         })
     }

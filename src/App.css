@@ -14,23 +14,31 @@
 }
 
 .welcome__title {
-  font-size: 2rem;
-  margin-bottom: .5rem;
+  font-size: 3rem;
+  margin-bottom: .8rem;
 }
 
 .form input {
-  padding: .5rem .8rem;
+  padding: .8rem .8rem;
   border: 1px solid #ccc;
   margin-bottom: .5rem;
   outline: none;
 }
 
 .btn {
-  padding: .5rem .8rem;
-  border: 1px solid #ccc;
+  padding: .8rem 1.2rem;
+  border: none;
+  /* border: 1px solid #ccc; */
   outline: none;
   color: #fff;
   background-color: teal;
+}
+
+.btn--logout {
+  width: 5%;
+  margin: 1rem;
+  padding: 1rem;
+  background-color: orangered;
 }
 
 .signup__btn, .login__btn {
@@ -42,24 +50,32 @@
 .nav {
   display: flex;
   justify-content: flex-end;
+  position: relative;
+  z-index: 2;
 }
 
 .nav__list {
-  min-width: 200px;
+  min-width: 15%;
   list-style: none;
   display: flex;
   justify-content: space-evenly;
   padding: .5rem 0;
 }
 
+.nav__box {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
 .nav__link {
-  font-size: 1rem;
+  font-size: 1.6rem;
   text-decoration: none;
   color: #000;
 }
 
 .signup__form span {
-  font-size: .8rem;
+  font-size: 1.3rem;
   color: orangered;
 }
 
@@ -67,9 +83,85 @@
   border: 1px solid orangered;
 }
 
+/* HOME PAGE */
+.home-wrapper {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-image: url('./images/home-large.jpg');
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.home {
+  height: 100vh;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.home__box--sub {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form--home {
+  display: flex;
+  height: 75%;
+}
+
+.home__title {
+  font-size: 5.6rem;
+  font-weight: 300;
+  color: #fff;
+  position: relative;
+  top: 22.4rem;
+}
+
+.form--home input, select {
+  width: 15%;
+  padding: 1.5rem 1.3rem;
+  border: 1px solid #ccc;
+  outline: none;
+  margin: 0 .5rem;
+}
+
+.btn--home {
+  padding: 1.6rem 3.2rem;
+  background-color: orangered;
+}
+
 @media only screen and (max-width: 600px) {
   .signup__btn, .login__btn {
     width: 50%;
+  }
+
+  .home__title {
+    font-size: 1.8rem;
+    top: 34%;
+  }
+
+  .form--home {
+    flex-direction: column;
+  }
+
+  .form--home input, select, button {
+    width: 43%;
+    font-size: 1.3rem;
+    padding: 1.7rem 1rem;
+    /* border: 1px solid #ccc; */
+    outline: none;
+    margin-bottom: 1rem;
+    position: relative;
+    top: 8rem;
+  }
+
+  .btn--logout {
+    top: 0;
+    width: 20%;
   }
 }
 
@@ -79,6 +171,6 @@
   }
 
   .welcome__title {
-    font-size: 1.7rem;
+    font-size: 2.6rem;
   }
 }

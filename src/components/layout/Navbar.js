@@ -29,13 +29,11 @@ function Navbar() {
     </nav>) :
     (
         <nav className="nav">
-            <ul className="nav__list">
-                <li className="nav__item">
-                    <button className="btn" onClick={handleLogout}>
-                        Odjava
-                    </button>
-                </li>
-            </ul>
+            <div className="nav__box">  
+                <button className="btn btn--logout" onClick={handleLogout}>
+                    Odjava
+                </button>
+            </div>
         </nav>
     )
 

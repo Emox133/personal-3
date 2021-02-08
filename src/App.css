@@ -25,6 +25,10 @@
   outline: none;
 }
 
+form select {
+  background-color: #fff;
+}
+
 .btn {
   padding: .8rem 1.2rem;
   border: none;

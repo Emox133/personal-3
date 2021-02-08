@@ -29,6 +29,7 @@
   padding: .8rem 1.2rem;
   border: none;
   /* border: 1px solid #ccc; */
+  border-radius: .5rem;
   outline: none;
   color: #fff;
   background-color: teal;
@@ -154,7 +155,7 @@
   }
 
   .home__title {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     top: 34%;
   }
 

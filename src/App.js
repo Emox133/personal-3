@@ -36,10 +36,6 @@ function App() {
     }
   }, [token, setAuth, handleLogout])
 
-  if(!auth) {
-    <Redirect to="/signup"/>
-  }
-
   let authBar = auth ? (
       <Switch>
         <Route exact path="/" component={Home}/>
@@ -48,7 +44,7 @@ function App() {
   ) : 
   (
     <Switch>
-      <Route path="/signup" component={Signup}/>
+      <Route exact path="/" component={Signup}/>
       <Route path="/login" component={Login}/>
     </Switch>)
 

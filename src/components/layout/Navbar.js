@@ -1,22 +1,30 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link} from "react-router-dom"
+import Modal from '../Modal'
 import {useAuth} from '../../contexts/authContext'
+import {useAdveristments} from '../../contexts/adveristmentContext'
 import {useHistory} from 'react-router-dom'
 
 function Navbar() {
-    const {auth, setAuth} = useAuth()
+    const {auth, handleLogout} = useAuth()
+    const [open, setOpen] = useState(false)
     const history = useHistory()
+    const {advertisements} = useAdveristments()
 
-    const handleLogout = () => {
-        setAuth(false)
-        history.push('/login')
+    const handleOpen = () => {
+        setOpen(true)
     }
 
-    let authBar = !auth ? 
+    const handleClose = (e) => {
+        e.preventDefault()
+        setOpen(false)
+    }
+
+    let authBar = !auth && advertisements.length > 0 ? 
     (<nav className="nav">
         <ul className="nav__list">
             <li className="nav__item">
-                <Link to="/" className="nav__link">
+                <Link to="/signup" className="nav__link">
                     Registracija
                 </Link>
             </li>
@@ -26,18 +34,27 @@ function Navbar() {
                 </Link>
             </li>
         </ul>
-    </nav>) :
+    </nav>) : 
+    advertisements.length > 0 ?
     (
         <nav className="nav">
             <div className="nav__box">  
-                <button className="btn btn--logout" onClick={handleLogout}>
+                <button className="btn btn--logout" onClick={() => handleLogout(history)}>
                     Odjava
+                </button>
+                <button className="btn btn--logout" onClick={handleOpen}>
+                    Objavi Oglas
                 </button>
             </div>
         </nav>
-    )
+    ) : null
 
-    return authBar
+    return (
+        <>
+        {authBar}
+        <Modal isOpen={open} close={handleClose}/>
+        </>
+    )
 }
 
 export default Navbar

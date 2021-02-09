@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import axios from 'axios'
 import {useAuth} from '../contexts/authContext'
+import {setAuthHeader} from '../utils/SetAuthHeader'
 
 function Signup() {
     const [fields, setFields] = useState({
@@ -42,6 +43,7 @@ function Signup() {
         axios.post('/users/signup', data)
         .then(res => {
             if(res.status === 201) {
+                setAuthHeader(res.data.token)
                 setAuth(true)
                 history.push('/')
             }

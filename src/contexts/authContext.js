@@ -1,4 +1,5 @@
-import React, {useState, useContext } from 'react'
+import React, {useState, useContext, useCallback } from 'react'
+import axios from 'axios'
 
 const AuthContext = React.createContext()
 
@@ -9,9 +10,17 @@ export function useAuth() {
 export function AuthProvider({ children }) {
   const [auth, setAuth] = useState(false)
 
+  const handleLogout = useCallback((history) => {
+    localStorage.removeItem('token')
+    delete axios.defaults.headers.common['Authorization'];
+    setAuth(false)
+    history.push('/login')
+  }, [])
+
   const value = {
       auth,
-      setAuth
+      setAuth,
+      handleLogout
   }
 
   return (

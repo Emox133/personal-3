@@ -36,10 +36,14 @@ function App() {
     }
   }, [token, setAuth, handleLogout])
 
+  if(!auth) {
+    <Redirect to="/signup"/>
+  }
+
   let authBar = auth ? (
       <Switch>
         <Route exact path="/" component={Home}/>
-        <Redirect to="/signup"/>
+        <Redirect to="/"/>
       </Switch>
   ) : 
   (

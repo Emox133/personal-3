@@ -18,9 +18,9 @@ function App() {
   const {getAdveristments} = useAdveristments()
   const token = localStorage.token;
 
-  useEffect(() => {
-    getAdveristments()
-  }, [])
+  // useEffect(() => {
+  //   getAdveristments()
+  // }, [])
 
   useEffect(() => {
     if(token) {
@@ -32,6 +32,7 @@ function App() {
       } else {
         axios.defaults.headers.common['Authorization'] = `${token}`;
         setAuth(true)
+        getAdveristments()
       }
     }
   }, [token, setAuth, handleLogout])

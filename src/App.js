@@ -39,7 +39,7 @@ function App() {
   let authBar = auth ? (
       <Switch>
         <Route exact path="/" component={Home}/>
-        <Redirect to="/"/>
+        <Redirect to="/signup"/>
       </Switch>
   ) : 
   (

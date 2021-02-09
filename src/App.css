@@ -1,11 +1,91 @@
+#root {
+
+}
+
 .welcome-container {
-  height: calc(100vh - 37.6px);
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  background-color: #EBF3FB;
 }
+
+.welcome__box {
+  min-height: 70%;
+  width: 80%;
+  position: relative;
+  border-radius: 1rem;
+  background-color: #fff;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0px 7px 10px 0px rgba(0, 0, 0, 0.4);
+}
+
+.welcome__title-box {
+  min-height: 13.7rem;
+  background-color: #F3322B;
+  color: #EBF3FB;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome__title {
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.welcome__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome__form input {
+  width: 80%;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  padding: .7rem 1rem;
+  margin-top: 1rem;
+  transition: all .4s ease-out;
+}
+
+.welcome__form input:focus {
+  border-bottom: 1px solid #F3322B;
+}
+
+.welcome__btn {
+  width: 40%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.btn-2 {
+  color: #EBF3FB;
+  background-color: #F3322B;
+  padding: 1rem;
+  border-radius: 3rem;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.welcome__form span {
+  height: 1rem;
+  font-size: 1.3rem;
+  margin-top: .5rem;
+  color: #F3322B;
+}
+
+.welcome__form .error {
+  border: 1px solid #F3322B;
+}
+
+.welcome__form .error::placeholder {
+  color: #F3322B;
+}
+
 
 .form {
   display: flex;
@@ -13,10 +93,10 @@
   width: 25%;
 }
 
-.welcome__title {
+/* .welcome__title {
   font-size: 3rem;
   margin-bottom: .8rem;
-}
+} */
 
 .form input {
   padding: .8rem .8rem;
@@ -78,15 +158,6 @@ form select {
   font-size: 1.6rem;
   text-decoration: none;
   color: #000;
-}
-
-.signup__form span {
-  font-size: 1.3rem;
-  color: orangered;
-}
-
-.signup__form .error {
-  border: 1px solid orangered;
 }
 
 /* HOME PAGE */
@@ -190,9 +261,9 @@ form select {
   background-color: rgb(255, 0, 191);
 } */
 
-.advert__sidebar {
-  /* border: 1px solid blue; */
-}
+/* .advert__sidebar {
+  border: 1px solid blue;
+} */
 
 .advert__primary {
   border: 1.5px solid #ccc;
@@ -327,9 +398,9 @@ form select {
     width: 65%;
   }
 
-  .welcome__title {
+  /* .welcome__title {
     font-size: 2.6rem;
-  }
+  } */
 
   .nav__list {
     width: 30%;
@@ -381,7 +452,26 @@ form select {
     width: 90%;
   }
 
-  .modal__title {
+  /* .modal__title {
 
+  } */
+}
+
+/* MOBILE FIRST */
+@media only screen and (min-width: 600px) {
+  .welcome__box {
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .welcome__box {
+    width: 40%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .welcome__box {
+    width: 30%;
   }
 }

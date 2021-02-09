@@ -48,15 +48,19 @@ function Signup() {
 
     return (
         <div className="welcome-container">
-            <h2 className="welcome__title signup--title">Prijava</h2>
-            <form className="form signup__form" onSubmit={handleSubmit}>
-                {errors.combinedMessage ? <span>{errors.combinedMessage}</span> : null}
-                <input className={errors.combinedMessage ? 'error' : null} type="email" placeholder="E-mail" name="email" onChange={handleFieldsChange}/>
-                {errors.combinedMessage ? <span>{errors.combinedMessage}</span> : null}
-                <input className={errors.combinedMessage ? 'error' : null} type="password" placeholder="Lozinka" name="password" onChange={handleFieldsChange}/>
+            <div className="welcome__box">
+                <div className="welcome__title-box">
+                    <h2 className="welcome__title">Prijava</h2>
+                </div>
+                <form className="welcome__form" onSubmit={handleSubmit}>
+                    {errors.combinedMessage ? <span>{errors.combinedMessage}</span> : null}
+                    <input className={errors.combinedMessage ? 'error' : null} type="email" placeholder="E-mail" name="email" onChange={handleFieldsChange}/>
+                    {errors.combinedMessage ? <span>{errors.combinedMessage}</span> : null}
+                    <input className={errors.combinedMessage ? 'error' : null} type="password" placeholder="Lozinka" name="password" onChange={handleFieldsChange}/>
 
-                <button className="signup__btn btn" type="submit">Potvrdi</button>
-            </form>
+                    <button className="welcome__btn btn-2" type="submit">Potvrdi</button>
+                </form>
+            </div>
         </div>
     )
 }

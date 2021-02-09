@@ -11,7 +11,7 @@ import {useAuth} from './contexts/authContext'
 import {useAdveristments} from './contexts/adveristmentContext'
 import jwtDecode from 'jwt-decode'
 
-axios.defaults.baseURL = 'https://glacial-lake-62293.herokuapp.com/api/v1'
+// axios.defaults.baseURL = 'https://glacial-lake-62293.herokuapp.com/api/v1'
  
 function App() {
   const {auth, handleLogout, setAuth} = useAuth()

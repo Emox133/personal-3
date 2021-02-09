@@ -64,23 +64,28 @@ function Signup() {
 
     return (
         <div className="welcome-container">
-            <h2 className="welcome__title signup--title">Registracija</h2>
-            <form className="form signup__form" onSubmit={handleSubmit}>
-                {errors.firstName ? <span>{errors.firstName.message}</span> : null}
-                <input className={errors.firstName ? 'error' : null} type="text" placeholder="Ime" name="firstName" onChange={handleFieldsChange}/>
-                {errors.lastName ? <span>{errors.lastName.message}</span> : null}
-                <input className={errors.lastName ? 'error' : null} type="text" placeholder="Prezime" name="lastName" onChange={handleFieldsChange}/>
-                {errors.email ? <span>{errors.email.message}</span> : null}
-                <input className={errors.email ? 'error' : null} type="email" placeholder="E-mail" name="email" onChange={handleFieldsChange}/>
-                {errors.username ? <span>{errors.username.message}</span> : null}
-                <input className={errors.username ? 'error' : null} type="text" placeholder="Korisničko Ime" name="username" onChange={handleFieldsChange}/>
-                {errors.password ? <span>{errors.password.message}</span> : null}
-                <input className={errors.password ? 'error' : null} type="password" placeholder="Lozinka" name="password" onChange={handleFieldsChange}/>
-                {errors.confirmPassword ? <span>{errors.confirmPassword.message}</span> : null}
-                <input className={errors.confirmPassword ? 'error' : null} type="password" placeholder="Ponovite Lozinku" name="confirmPassword" onChange={handleFieldsChange}/>
+            <div className="welcome__box">
+                <div className="welcome__title-box">
+                    <h2 className="welcome__title">Registracija</h2>
+                </div>
 
-                <button className="signup__btn btn" type="submit">Potvrdi</button>
-            </form>
+                <form className="welcome__form" onSubmit={handleSubmit}>
+                   {errors.firstName ? <span>{errors.firstName.message}</span> : null}
+                   <input className={errors.firstName ? 'error' : null} type="text" placeholder="Ime" name="firstName" onChange={handleFieldsChange}/>
+                   {errors.lastName ? <span>{errors.lastName.message}</span> : null}
+                   <input className={errors.lastName ? 'error' : null} type="text" placeholder="Prezime" name="lastName" onChange={handleFieldsChange}/>
+                   {errors.email ? <span>{errors.email.message}</span> : null}
+                   <input className={errors.email ? 'error' : null} type="email" placeholder="E-mail" name="email" onChange={handleFieldsChange}/>
+                   {errors.username ? <span>{errors.username.message}</span> : null}
+                   <input className={errors.username ? 'error' : null} type="text" placeholder="Korisničko Ime" name="username" onChange={handleFieldsChange}/>
+                   {errors.password ? <span>{errors.password.message}</span> : null}
+                   <input className={errors.password ? 'error' : null} type="password" placeholder="Lozinka" name="password" onChange={handleFieldsChange}/>
+                   {errors.confirmPassword ? <span>{errors.confirmPassword.message}</span> : null}
+                   <input className={errors.confirmPassword ? 'error' : null} type="password" placeholder="Ponovite Lozinku" name="confirmPassword" onChange={handleFieldsChange}/>
+
+                   <button className="welcome__btn btn-2" type="submit">Potvrdi</button>
+                </form>
+            </div>
         </div>
     )
 }

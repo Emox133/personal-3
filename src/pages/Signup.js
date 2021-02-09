@@ -49,6 +49,7 @@ function Signup() {
             }
         })
         .catch(err => {
+            console.log(err.response)
             const errObj = err.response.status !== 403 ? err.response.data.error.errors : {
                 firstName: '',
                 lastName: '',

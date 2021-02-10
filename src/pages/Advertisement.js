@@ -3,21 +3,34 @@ import React from 'react'
 // import imageTwo from '../images/job-2.jpg'
 // import imageThree from '../images/job-3.jpg'
 // import imageFour from '../images/job-4.jpg'
-import imageFive from '../images/job-5.jpg'
+// import imageFive from '../images/job-5.jpg'
 
 const Advertisement = ({posts}) => {
-    const {category, location, name} = posts
+    const {category, location, name, company, logo} = posts
 
     return (
         <div className="advert__primary">
-            <img className="advert__primary-logo" src={imageFive} alt="Company logo"></img>
-            <h2 className="advert__primary-name">{name}</h2>
-            <div className="advert__primary-details">
-                <p className="advert__primary-location">{location}</p>
-                <p className="advert__primary-category">{category}</p>
-                <p className="advert__primary-expiration">Mon Feb 08</p>
+            <div className="advert__primary-colored"></div>
+            <div className="advert__primary-logo"></div>
+            <div className="advert__primary-text">
+                <h2 className="advert__primary-company">{logo}</h2>
+                <p className="advert__primary-position">{name}</p>
             </div>
-            <button className="btn btn--apply">Konkuriši</button>
+            <div className="advert__primary-shaded">
+                <div className="advert__primary-box">
+                    <span><strong>Lokacija:</strong></span>
+                    <span>{location}</span>
+                </div>
+                <div className="advert__primary-box">
+                <span><strong>Kategorija:</strong></span>
+                    <span>{category}</span>
+                </div>
+                <div className="advert__primary-box">
+                <span><strong>Ističe:</strong></span>
+                    <span>Mon Feb 09</span>
+                </div>
+            </div>
+            <button className="advert__primary-btn btn-2">Konkuriši</button>
         </div>
     )
 }

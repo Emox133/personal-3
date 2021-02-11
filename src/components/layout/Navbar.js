@@ -37,16 +37,20 @@ function Navbar() {
     </nav>) : 
     advertisements.length > 0 ?
     (
-        <nav className="nav">
-            <div className="nav__box">  
-                <button className="btn btn--logout" onClick={() => handleLogout(history)}>
+    <nav className="nav">
+        <ul className="nav__list">
+            <li className="nav__item">
+                <Link className="nav__link" onClick={() => handleLogout(history)}>
                     Odjava
-                </button>
-                <button className="btn btn--logout" onClick={handleOpen}>
+                </Link>
+            </li>
+            <li className="nav__item">
+                <Link className="nav__link" onClick={handleOpen}> 
                     Objavi Oglas
-                </button>
-            </div>
-        </nav>
+                </Link>
+            </li>
+        </ul>
+    </nav>
     ) : null
 
     return (

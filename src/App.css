@@ -82,7 +82,6 @@
   color: #F3322B;
 }
 
-
 .form {
   display: flex;
   flex-direction: column;
@@ -129,11 +128,14 @@ form select {
 }
 
 .nav {
+  height: 7vh;
   width: 100%;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   position: absolute;
   z-index: 20;
+  background-color: #F3322B;
 }
 
 .nav__list {
@@ -153,7 +155,7 @@ form select {
 .nav__link {
   font-size: 1.6rem;
   text-decoration: none;
-  color: #000;
+  color: #eee;
 }
 
 /* HOME PAGE */
@@ -412,7 +414,7 @@ form select {
   } */
 
   .nav__list {
-    width: 30%;
+    min-width: 30%;
   }
 }
 

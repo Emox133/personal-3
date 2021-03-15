@@ -3,7 +3,7 @@ import {useAdveristments} from '../contexts/adveristmentContext'
 import Advertisement from './Advertisement'
 
 const Advertisements = () => {
-    const {advertisements} = useAdveristments()
+    const {advertisements, handlePageIncrease} = useAdveristments()
 
     let renderAdvertisements = advertisements.map(a => {
         return <Advertisement posts={a} key={a._id}/>
@@ -16,6 +16,7 @@ const Advertisements = () => {
                 <div className="advert__content">
                     {renderAdvertisements}
                 </div>
+                <button onClick={handlePageIncrease} style={{marginTop: '1rem', width: '10%', margin: '0 auto', padding: '1rem'}}>Load more</button>
 
                 <div className="advert__sidebar">
                     <h2>&nbsp;</h2>

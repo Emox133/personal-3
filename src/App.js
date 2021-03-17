@@ -15,7 +15,7 @@ import jwtDecode from 'jwt-decode'
  
 function App() {
   const {auth, handleLogout, setAuth} = useAuth()
-  const {getAdveristments} = useAdveristments()
+  const {getAdveristments, page} = useAdveristments()
   const token = localStorage.token;
 
   // useEffect(() => {
@@ -35,7 +35,7 @@ function App() {
         getAdveristments()
       }
     }
-  }, [token, setAuth, handleLogout])
+  }, [token, setAuth, handleLogout, page])
 
   let authBar = auth ? (
       <Switch>

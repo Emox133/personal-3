@@ -40,12 +40,12 @@ function Navbar() {
     <nav className="nav">
         <ul className="nav__list">
             <li className="nav__item">
-                <Link className="nav__link" onClick={() => handleLogout(history)}>
+                <Link to="" className="nav__link" onClick={() => handleLogout(history)}>
                     Odjava
                 </Link>
             </li>
             <li className="nav__item">
-                <Link className="nav__link" onClick={handleOpen}> 
+                <Link to="" className="nav__link" onClick={handleOpen}> 
                     Objavi Oglas
                 </Link>
             </li>

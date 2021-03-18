@@ -10,6 +10,7 @@ import Login from './pages/Login'
 import {useAuth} from './contexts/authContext'
 import {useAdveristments} from './contexts/adveristmentContext'
 import jwtDecode from 'jwt-decode'
+import SingleAdvertisement from './pages/SingleAdvertisement';
 
 // axios.defaults.baseURL = 'https://glacial-lake-62293.herokuapp.com/api/v1'
  
@@ -40,6 +41,7 @@ function App() {
   let authBar = auth ? (
       <Switch>
         <Route exact path="/" component={Home}/>
+        <Route path="/:id" component={SingleAdvertisement}/>
         <Redirect to="/"/>
       </Switch>
   ) : 

@@ -129,7 +129,7 @@ form select {
 
 .nav {
   height: 7vh;
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -163,6 +163,7 @@ form select {
   min-height: 100vh;
   min-width: 100vw;
   background-image: url('./images/home-large.jpg');
+  object-fit: cover;
   background-size: cover;
   background-position: center;
   position: relative;
@@ -207,7 +208,7 @@ form select {
 
 /* ADVERTISEMENTS */
 .advert {
-  height: 100vh;
+  height: auto;
   margin-top: 1rem;
 }
 
@@ -248,16 +249,23 @@ form select {
 /* later switch with actual image */
 .advert__primary-logo {
   height: 32%;
-  width: 40%;
+  width: 100%;
   /* display: block; for image */
   margin: 0 auto;
-  border: .5rem solid #fff;
+  /* border: .5rem solid #fff; */
   border-radius: 50%;
   position: relative;
   bottom: 16%;
-  background-image: url('./images/g-logo.jpg');
+  /* background-image: url('./images/g-logo.jpg'); */
   background-position: center;
   background-size: cover;
+  position: relative;
+}
+
+.advert__primary-img {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
 }
 
 .advert__primary-text {

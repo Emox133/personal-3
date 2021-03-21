@@ -56,7 +56,8 @@ export function AdvertisementsProvider({ children }) {
       visible,
       setVisible,
       hasMore,
-      loading
+      loading,
+      setLoading
   }
 
   return (

@@ -15,13 +15,9 @@ import SingleAdvertisement from './pages/SingleAdvertisement';
 // axios.defaults.baseURL = 'https://glacial-lake-62293.herokuapp.com/api/v1'
  
 function App() {
-  const {auth, handleLogout, setAuth} = useAuth()
+  const {auth, handleLogout, setAuth, fetchUser} = useAuth()
   const {getAdveristments, page} = useAdveristments()
   const token = localStorage.token;
-
-  // useEffect(() => {
-  //   getAdveristments()
-  // }, [])
 
   useEffect(() => {
     if(token) {
@@ -34,6 +30,7 @@ function App() {
         axios.defaults.headers.common['Authorization'] = `${token}`;
         setAuth(true)
         getAdveristments()
+        fetchUser()
       }
     }
   }, [token, setAuth, handleLogout, page])

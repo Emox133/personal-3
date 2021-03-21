@@ -40,13 +40,18 @@ function Navbar() {
     <nav className="nav">
         <ul className="nav__list">
             <li className="nav__item">
-                <Link to="" className="nav__link" onClick={() => handleLogout(history)}>
-                    Odjava
+                <Link to="/" className="nav__link">
+                    Home
                 </Link>
             </li>
             <li className="nav__item">
                 <Link to="" className="nav__link" onClick={handleOpen}> 
                     Objavi Oglas
+                </Link>
+            </li>
+            <li className="nav__item">
+                <Link to="/" className="nav__link" onClick={() => handleLogout(history)}>
+                    Odjava
                 </Link>
             </li>
         </ul>

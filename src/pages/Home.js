@@ -2,18 +2,17 @@ import React, {useState} from 'react'
 import Advertisements from './Advertisements'
 import {useAdveristments} from '../contexts/adveristmentContext'
 import Loader from '../utils/Loader'
-import Slider from '../components/layout/Slider'
+// import Slider from '../components/layout/Slider'
 import CoockieFooter from '../components/layout/CoockieFooter'
 
 function Home() {
     const {advertisements, loading} = useAdveristments()
     const [fields, setFields] = useState({
-        name: '',
-        category: ''
+        name: ''
     })
 
     const filteredAdvertisements = advertisements.filter(el => {
-        return el.name.includes(fields.name) && el.category.includes(fields.category)
+        return el.name.includes(fields.name)
     })
 
     const handleChange = e => {
@@ -25,7 +24,7 @@ function Home() {
         }, 2000)
     }
  
-    let content = advertisements.length > 0 && !loading ? (
+    let content = advertisements && !loading ? (
         <>
             <header className="home">
                 {/* <div className="bg-video">
@@ -37,17 +36,6 @@ function Home() {
                 {/* <Slider /> */}
                 <form className="form--home home__box--sub">
                     <input name="name" type="text" className="home__input--1" placeholder="Unesite ključne riječi..." onChange={handleChange}/>
-                    <select className="home__input--2" name="category" onChange={handleChange}>
-                        <option>IT</option>
-                        <option>Medicina</option>
-                        <option>Obrazovanje</option>
-                        <option>Ekonomija</option>
-                        <option>Transport</option>
-                        <option>Trgovina</option>
-                        <option>Marketing</option>
-                        <option>Privreda</option>
-                    </select>
-                    {/* <button className="btn btn--home">Potvrdi</button> */}
                 </form>
                 <CoockieFooter/>
             </header>

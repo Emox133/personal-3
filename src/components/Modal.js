@@ -4,12 +4,28 @@ import axios from 'axios'
 const Modal = ({isOpen, close}) => {
     const [fields, setFields] = useState({
         name: '',
-        company: '',
+        companyName: '',
+        companyEmail: '',
+        companyNumber: '',
         location: '',
-        employees: '',
+        expiresIn: '',
         website: '',
         description: '',
-        category: ''
+        email: '',
+        telephone: '',
+        positionsLeft: ''
+    })
+
+    const [errors, setErrors] = useState({
+        name: '',
+        companyName: '',
+        location: '',
+        companyName: '',
+        expiresIn: '',
+        companyEmail: '',
+        companyNumber: '',
+        positionsLeft: '',
+        description: ''
     })
     
     const handleInputChange = (e) => {
@@ -35,33 +51,44 @@ const Modal = ({isOpen, close}) => {
         })
         .catch(err => {
             console.log(err.response)
-            alert('Something went wrong. 😰')
-            close(e)
+            // alert('Something went wrong. 😰')
+            const errObj = err.response.status !== 403 ? err.response.data.error.errors : {
+                name: '',
+                company: '',
+                location: '',
+                companyEmail: '',
+                companyNumber: '',
+                positionsLeft: '',
+                description: ''
+            } 
+            setErrors({...errObj})
+            // close(e)
         })
     }
-    
+
     return (
         <div className={isOpen ? "modal" : "modal__closed"}>
             <div className="modal__layer" onClick={close}></div>
             <div className="modal__content">
                 <h2 className="modal__title">Novi Oglas</h2>
                 <form className="form modal__form" onSubmit={handleSubmit}>
-                    <input type="text" placeholder="Naslov" name="name" onChange={handleInputChange}/>
-                    <input type="text" placeholder="Kompanija" name="company" onChange={handleInputChange}/>
+                    {errors.name ? <span>{errors.name.message}</span> : null}
+                    <input type="text" placeholder="Pozicija" name="name" onChange={handleInputChange}/>
+                    {errors.companyName ? <span>{errors.companyName.message}</span> : null}
+                    <input type="text" placeholder="Ime kompanije" name="companyName" onChange={handleInputChange}/>
+                    {errors.location ? <span>{errors.location.message}</span> : null}
                     <input type="text" placeholder="Lokacija" name="location" onChange={handleInputChange}/>
-                    <input type="number" placeholder="Broj zaposlenih" name="employees" onChange={handleInputChange}/>
                     <input type="text" placeholder="Web stranica" name="website" onChange={handleInputChange}/>
-                    <input type="textarea" placeholder="Opis radnog mjesta" name="description" onChange={handleInputChange}/>
-                    <select style={{position: "static", width: "85%"}} name="category" onChange={handleInputChange}>
-                        <option value="IT">IT</option>
-                        <option value="Medicina">Medicina</option>
-                        <option value="Obrazovanje">Obrazovanje</option>
-                        <option value="Ekonomija">Ekonomija</option>
-                        <option value="Transport">Transport</option>
-                        <option value="Trgovina">Trgovina</option>
-                        <option value="Privreda">Privreda</option>
-                        <option value="Marketing">Marketing</option>
-                    </select>
+                    {errors.companyEmail ? <span>{errors.companyEmail.message}</span> : null}
+                    <input type="email" placeholder="E-Mail kompanije" name="companyEmail" onChange={handleInputChange}/>
+                    {errors.expiresIn ? <span>{errors.expiresIn.message}</span> : null}
+                    <input type="date" placeholder="Oglas ističe" name="expiresIn" onChange={handleInputChange}/>
+                    {errors.positionsLeft ? <span>{errors.positionsLeft.message}</span> : null}
+                    <input type="number" placeholder="Broj slobodnih mjesta" name="positionsLeft" onChange={handleInputChange}/>
+                    {errors.companyNumber ? <span>{errors.companyNumber.message}</span> : null}
+                    <input type="tel" placeholder="Broj telefona" name="companyNumber" onChange={handleInputChange}/>
+                    {errors.description ? <span>{errors.description.message}</span> : null}
+                    <textarea rows="5" type="textarea" placeholder="Opis radnog mjesta" name="description" onChange={handleInputChange}/>
                     <div className="modal__buttons">
                         <button onClick={close} className="btn--close btn">Otkaži</button>
                         <button type="submit" className="btn--submit btn">Potvrdi</button>

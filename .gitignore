@@ -1,5 +1,12 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+#files
+/src/pages/SignupMaterial.js
+/src/pages/LoginMaterial.js
+/src/components/layout/NavbarMaterial.js
+/src/pages/BackupSingleComponent.js
+/src/backupSingle.css
+
 # dependencies
 /node_modules
 /.pnp

@@ -9,7 +9,7 @@ function Navbar() {
     const {auth, handleLogout} = useAuth()
     const [open, setOpen] = useState(false)
     const history = useHistory()
-    const {advertisements} = useAdveristments()
+    const {advertisements, loading} = useAdveristments()
 
     const handleOpen = () => {
         setOpen(true)
@@ -24,7 +24,7 @@ function Navbar() {
     (<nav className="nav">
         <ul className="nav__list">
             <li className="nav__item">
-                <Link to="/" className="nav__link">
+                <Link to="/signup" className="nav__link">
                     Registracija
                 </Link>
             </li>
@@ -35,7 +35,7 @@ function Navbar() {
             </li>
         </ul>
     </nav>) : 
-    advertisements.length > 0 ?
+    advertisements ?
     (
     <nav className="nav">
         <ul className="nav__list">

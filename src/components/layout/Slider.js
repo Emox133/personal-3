@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react'
-import Logo from './../../images/g-logo.jpg'
 
 const Slider = () => {
     let counter = 1;
@@ -23,16 +22,16 @@ const Slider = () => {
                 <input type="radio" name="radio-btn" id="radio4" />
 
                 <div className="slide first">
-                    <img src={Logo} alt="Logo"/>
+                    <img src="" alt="Logo"/>
                 </div>
                 <div className="slide">
-                    <img src={Logo} alt="Logo"/>
+                    <img src="" alt="Logo"/>
                 </div>
                 <div className="slide">
-                    <img src={Logo} alt="Logo"/>
+                    <img src="" alt="Logo"/>
                 </div>
                 <div className="slide">
-                    <img src={Logo} alt="Logo"/>
+                    <img src="" alt="Logo"/>
                 </div>
 
                 <div className="navigation-auto">

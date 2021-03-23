@@ -4,13 +4,17 @@ import './index.css';
 import App from './App';
 import {AuthProvider} from './contexts/authContext'
 import {AdvertisementsProvider} from './contexts/adveristmentContext'
+import {ThemeProvider} from '@material-ui/core'
+import {theme} from './utils/theme'
 
 let app = 
-<AuthProvider>
-  <AdvertisementsProvider>
-    <App />
-  </AdvertisementsProvider>
-</AuthProvider>
+<ThemeProvider theme={theme}>
+  <AuthProvider>
+    <AdvertisementsProvider>
+      <App />
+    </AdvertisementsProvider>
+  </AuthProvider>
+</ThemeProvider>
 
 ReactDOM.render(
   <React.StrictMode>

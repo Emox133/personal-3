@@ -6,12 +6,14 @@ import {useHistory} from 'react-router-dom'
 
 const Advertisement = ({posts}) => {
     const {getAdvertisement} = useAdveristments()
-    const {category, location, name, company, logo, _id} = posts
+    const {location, name, logo, _id, companyNumber, companyEmail, companyName, expiresIn} = posts
     const history = useHistory()
 
     const handleClick = () => {
         getAdvertisement(_id, history)
     }
+
+    let formatedDate = new Date(expiresIn).toDateString().toString().split(' ').slice(1, 4).join(' ')
 
     return (
         <div className="advert__primary">
@@ -29,12 +31,12 @@ const Advertisement = ({posts}) => {
                     <span>{location}</span>
                 </div>
                 <div className="advert__primary-box">
-                <span><strong>Kategorija:</strong></span>
-                    <span>{category}</span>
+                <span><strong>Kompanija:</strong></span>
+                    <span>{companyName}</span>
                 </div>
                 <div className="advert__primary-box">
                 <span><strong>Ističe:</strong></span>
-                    <span>Mon Feb 09</span>
+                    <span>{formatedDate}</span>
                 </div>
             </div>
             <Link to={_id}>

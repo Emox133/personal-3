@@ -6,6 +6,7 @@
 
 html {
   font-size: 62.5%;
+  box-sizing: border-box;
 }
 
 body {
@@ -21,6 +22,12 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+:root {
+  --color-primary: #25028F;
+  --color-secondary: #000000;
+  --color-tertiary: #875CC0;
 }
 
 /* #root {

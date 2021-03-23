@@ -12,7 +12,7 @@ import {useAdveristments} from './contexts/adveristmentContext'
 import jwtDecode from 'jwt-decode'
 import SingleAdvertisement from './pages/SingleAdvertisement';
 
-// axios.defaults.baseURL = 'https://glacial-lake-62293.herokuapp.com/api/v1'
+axios.defaults.baseURL = 'https://glacial-lake-62293.herokuapp.com/api/v1'
  
 function App() {
   const {auth, handleLogout, setAuth, fetchUser} = useAuth()
@@ -44,7 +44,7 @@ function App() {
   ) : 
   (
     <Switch>
-      <Route exact path="/" component={Signup}/>
+      <Route path="/signup" component={Signup}/>
       <Route path="/login" component={Login}/>
     </Switch>)
 

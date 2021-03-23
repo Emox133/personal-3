@@ -2,7 +2,7 @@ import React, {useRef} from 'react'
 import {useAdveristments} from '../contexts/adveristmentContext'
 import Advertisement from './Advertisement'
 // import {useElementOnScreen} from './../hooks/useElementOnScreen'
-import Loader from '../utils/Loader'
+// import Loader from '../utils/Loader'
 
 const Advertisements = ({filteredAdvertisements}) => {
     const {advertisements, visible, handlePageIncrease, hasMore, loading} = useAdveristments()

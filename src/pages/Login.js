@@ -42,8 +42,8 @@ function Signup() {
         .catch(err => {
             console.log(err)
             console.log(err.response)
-            const msg = err.response.data.message
-            setErrors({combinedMessage: msg})
+            // const msg = err.response.data.message
+            // setErrors({combinedMessage: msg})
         })
     }
 

@@ -1,11 +1,13 @@
 import React, {useEffect} from 'react'
+import Logo from './../../images/logo.jpg'
 
 const Slider = () => {
-    let counter = 1;
-
     useEffect(() => {
+        let counter = 1;
         setInterval(() => {
-            document.getElementById('radio' + counter).checked = true;
+            if(window.location.pathname === '/') {
+                document.getElementById('radio' + counter).checked = true;
+            }
             counter++;
             if(counter > 4){
                 counter = 1
@@ -13,6 +15,8 @@ const Slider = () => {
         }, 3000)
     }, [])
 
+
+    console.log('Slider Rendering...')
     return (
         <div className="slider">
             <div className="slides">
@@ -22,16 +26,16 @@ const Slider = () => {
                 <input type="radio" name="radio-btn" id="radio4" />
 
                 <div className="slide first">
-                    <img src="" alt="Logo"/>
+                    <img src={Logo} alt="Logo"/>
                 </div>
                 <div className="slide">
-                    <img src="" alt="Logo"/>
+                    <img src={Logo} alt="Logo"/>
                 </div>
                 <div className="slide">
-                    <img src="" alt="Logo"/>
+                    <img src={Logo} alt="Logo"/>
                 </div>
                 <div className="slide">
-                    <img src="" alt="Logo"/>
+                    <img src={Logo} alt="Logo"/>
                 </div>
 
                 <div className="navigation-auto">
@@ -51,5 +55,7 @@ const Slider = () => {
         </div>
     )
 }
+
+export const MemoizedSlider = React.memo(Slider)
 
 export default Slider

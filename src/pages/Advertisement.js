@@ -6,7 +6,7 @@ import {useHistory} from 'react-router-dom'
 
 const Advertisement = ({posts}) => {
     const {getAdvertisement} = useAdveristments()
-    const {location, name, logo, _id, companyNumber, companyEmail, companyName, expiresIn} = posts
+    const {location, name, logo, _id, companyName, expiresIn} = posts
     const history = useHistory()
 
     const handleClick = () => {

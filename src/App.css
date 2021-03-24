@@ -258,7 +258,7 @@ input[type="date"]:valid:before {
 
 .advert__primary-colored {
   height: 30%;
-  background-color: var(--color-primary);
+  /* background-color: var(--color-primary); */
 }
 
 /* later switch with actual image */
@@ -344,12 +344,12 @@ input[type="date"]:valid:before {
   position: fixed;
   z-index: 50;
 }
-@supports (-webkit-backdrop-filter: blur(0px)) or (backdrop-filter: blur(10px)) {
+/* @supports (-webkit-backdrop-filter: blur(0px)) or (backdrop-filter: blur(10px)) {
   .modal__layer {
     backdrop-filter: blur(3.5px);
     -webkit-backdrop-filter: blur(3.5px);
   }
-}
+} */
 
 .modal__content {
   min-height: 70%;
@@ -435,12 +435,13 @@ input[type="date"]:valid:before {
 /* SLIDER */
 .slider{
   margin: 0 auto;
-  position: relative;
-  top: 10rem;
-  width: 800px;
-  height: 500px;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 250px;
   border-radius: 10px;
   overflow: hidden;
+  z-index: 30;
 }
 
 .slides{
@@ -454,23 +455,36 @@ input[type="date"]:valid:before {
 }
 
 .slide{
+  height: 250px;
   width: 20%;
   transition: 2s;
 }
 
 .slide img{
-  width: 800px;
-  height: 500px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  object-fit: cover;
 }
+/* 
+.slider__image {
+  display: block;
+  height: 200px;
+  width: 300px;
+  background-image: url('./images/add.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
 
 /*css for manual slide navigation*/
 
 .navigation-manual{
   position: absolute;
-  width: 800px;
-  margin-top: -40px;
   display: flex;
+  width: 100vw;
   justify-content: center;
+  margin-top: -280px;
 }
 
 .manual-btn{
@@ -510,9 +524,9 @@ input[type="date"]:valid:before {
 .navigation-auto{
   position: absolute;
   display: flex;
-  width: 800px;
+  width: 100vw;
   justify-content: center;
-  margin-top: 460px;
+  margin-top: -280px;
 }
 
 .navigation-auto div{
@@ -555,6 +569,7 @@ input[type="date"]:valid:before {
   bottom: 0;
   opacity: .9;
   padding: 2rem;
+  z-index: 40;
 }
 
 .btn--coockie {

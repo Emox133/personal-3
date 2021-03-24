@@ -11,7 +11,7 @@ export function AuthProvider({ children }) {
   const [auth, setAuth] = useState(false)
   const [user, setUser] = useState([])
 
-  const fetchUser = () => {
+  const fetchUser = useCallback(() => {
     axios.get('/users/me').then(res => {
       if(res.status === 200) {
         setUser(res.data.user)
@@ -19,7 +19,7 @@ export function AuthProvider({ children }) {
     }).catch(err => {
       console.log(err.response)
     })
-  }
+  }, [])
 
   const handleLogout = useCallback((history) => {
     axios.get('/users/logout').then(res => {

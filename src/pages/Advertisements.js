@@ -5,7 +5,7 @@ import Advertisement from './Advertisement'
 // import Loader from '../utils/Loader'
 
 const Advertisements = ({filteredAdvertisements}) => {
-    const {advertisements, visible, handlePageIncrease, hasMore, loading} = useAdveristments()
+    const {advertisements, visible, handlePageIncrease, hasMore} = useAdveristments()
     const refEl = useRef(null)
 
     const scrollToBottom = () => {

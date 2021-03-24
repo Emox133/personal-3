@@ -1,4 +1,4 @@
-import React, {useState, useContext, useRef} from 'react'
+import React, {useState, useContext, useRef, useCallback} from 'react'
 import axios from 'axios'
 
 const AdvertisementsContext = React.createContext()
@@ -33,7 +33,7 @@ export function AdvertisementsProvider({ children }) {
       })
   }
 
-  const getAdvertisement = (id, history) => {
+  const getAdvertisement = useCallback((id, history) => {
     setLoading(true)
     axios.get(`/oglasi/${id}`).then(res => {
       if(res.status === 200) {
@@ -44,7 +44,7 @@ export function AdvertisementsProvider({ children }) {
       console.log(err.response)
       setLoading(false)
     })
-  }
+  }, [])
 
   const value = {
       advertisements,

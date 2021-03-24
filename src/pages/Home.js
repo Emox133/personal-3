@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import Advertisements from './Advertisements'
 import {useAdveristments} from '../contexts/adveristmentContext'
 import Loader from '../utils/Loader'
-// import Slider from '../components/layout/Slider'
+import {MemoizedSlider} from '../components/layout/Slider'
 import CoockieFooter from '../components/layout/CoockieFooter'
 
 function Home() {
@@ -33,7 +33,7 @@ function Home() {
                     </video>
                 </div> */}
                 <h2 className="home__title">Pronađi novi posao među X objavljenih oglasa!</h2>
-                {/* <Slider /> */}
+                <MemoizedSlider />
                 <form className="form--home home__box--sub">
                     <input name="name" type="text" className="home__input--1" placeholder="Unesite ključne riječi..." onChange={handleChange}/>
                 </form>

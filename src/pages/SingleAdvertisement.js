@@ -1,12 +1,11 @@
 import React, {useEffect} from 'react'
 import {useAdveristments} from '../contexts/adveristmentContext'
-import Add from './../images/add.jpg'
 import {useLocation} from 'react-router-dom'
 import Loader from './../utils/Loader'
 
 const SingleAdvertisement = () => {
     const {getAdvertisement, advertisement, loading} = useAdveristments()
-    const {expiresIn, website, name, logo, description, companyEmail, companyNumber, companyName} = advertisement
+    const {expiresIn, name, logo, description, companyEmail, companyNumber, companyName} = advertisement
     let formatedDate = new Date(expiresIn).toDateString().toString().split(' ').slice(1, 4).join(' ')
 
     const location = useLocation()
@@ -15,7 +14,7 @@ const SingleAdvertisement = () => {
 
     useEffect(() => {
         getAdvertisement(id)
-    }, [])
+    }, [getAdvertisement, id])
 
     return (
        !loading && advertisement._id ? <div className="advert__single">
@@ -33,44 +32,7 @@ const SingleAdvertisement = () => {
                <header className="advert__single-text">
                     <h1 className="advert__single-name">{name}</h1>
                     <p className="advert__single-description">
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
-                        lorem ispum dolor sir amet.
+                        {description}
                     </p>
                </header>
                <div className="advert__single-box">

@@ -20,7 +20,7 @@ function Navbar() {
         setOpen(false)
     }
 
-    let authBar = !auth && advertisements ? 
+    let authBar = !auth && advertisements.length > 0 ? 
     (<nav className="nav">
         <ul className="nav__list">
             <li className="nav__item">

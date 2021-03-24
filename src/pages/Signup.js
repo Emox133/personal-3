@@ -50,6 +50,7 @@ function Signup() {
         })
         .catch(err => {
             console.log(err.response)
+            console.log(err)
             const errObj = err.response.status !== 403 ? err.response.data.error.errors : {
                 firstName: '',
                 lastName: '',

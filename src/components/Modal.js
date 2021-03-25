@@ -96,7 +96,7 @@ const Modal = ({isOpen, close}) => {
                     {errors.location ? <span>{errors.location.message}</span> : null}
                     <input type="text" placeholder="Lokacija" name="location" onChange={handleInputChange}/>
                     <label style={{color: '#555', fontSize: '1.2rem'}} htmlFor="logo">Učitaj sliku kompanije</label>
-                    <input type="file" multiple={false} name="logo" onChange={handleImage} id="logo" />
+                    <input type="file" multiple={false} name="photo" onChange={handleImage} id="logo" />
                     <input type="text" placeholder="Web stranica" name="website" onChange={handleInputChange}/>
                     {errors.companyEmail ? <span>{errors.companyEmail.message}</span> : null}
                     <input type="email" placeholder="E-Mail kompanije" name="companyEmail" onChange={handleInputChange}/>

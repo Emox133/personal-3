@@ -47,7 +47,7 @@ function App() {
   ) : 
   (
     <Switch>
-      <Route exact path="/" component={SignupMaterial}/>
+      <Route path="/signup" component={SignupMaterial}/>
       <Route path="/login" component={LoginMaterial}/>
     </Switch>)
 

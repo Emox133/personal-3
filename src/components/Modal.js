@@ -45,8 +45,6 @@ const Modal = ({isOpen, close}) => {
         formData.append('expiresIn', fields.expiresIn)
         formData.append('website', fields.website)
         formData.append('description', fields.description)
-        formData.append('email', fields.email)
-        formData.append('telephone', fields.telephone)
         formData.append('positionsLeft', fields.positionsLeft)
 
         axios({

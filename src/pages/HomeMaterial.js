@@ -3,17 +3,22 @@ import {CssBaseline, Typography, Container, TextField} from '@material-ui/core';
 import {makeStyles} from '@material-ui/styles'
 
 import HomeImage from './../images/home-large-3.jpg'
+import LoaderMaterial from './../utils/LoaderMaterial'
+import {useAdveristments} from './../contexts/adveristmentContext'
+import Loader from '../utils/Loader';
+import Advertisements from './Advertisements';
 
 const useStyles = makeStyles(theme => ({
     containerRoot: {
         height: 'calc(100vh - 64px)',
-        backgroundColor: '#cfe8fc',
+        backgroundColor: '#eee',
         position: 'relative',
         padding: '0'
     },
     imageRoot: {
         height: '100%',
-        width: '100%'
+        width: '100%',
+        backgroundImage: 'linear-gradient(to right, crimson, orangered)'
     },
     boxRoot: {
         width: '100%',
@@ -47,19 +52,20 @@ const useStyles = makeStyles(theme => ({
 
 export default function HomeMaterial() {
     const classes = useStyles()
+    const {loading, advertisements} = useAdveristments()
 
   return (
     <>
-      <CssBaseline />
-      <Container className={classes.containerRoot} maxWidth="xl">
-        <img src={HomeImage} className={classes.imageRoot} />
+    <CssBaseline />
+    {!loading ? <Container className={classes.containerRoot} maxWidth="xl">
+        <div className="imageRoot"></div>
         <div className={classes.boxRoot}>
             <Typography 
                 className={classes.typographyRoot}
                 variant="h3"
                 // align="center"
             >
-                Pronađi novi posao među x pronađenih oglasa
+                Pronađi novi posao među <span className="home__x">X</span> pronađenih oglasa
             </Typography>
             <TextField 
                 // placeholder="Unesite ključnu riječ..."
@@ -70,7 +76,7 @@ export default function HomeMaterial() {
                 name="query"
             />
         </div>
-      </Container>
+      </Container> : <Loader />}
     </>
   );
 }

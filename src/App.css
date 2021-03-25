@@ -417,19 +417,40 @@ input[type="date"]:valid:before {
 }
 
 .one {
-  background-color: #00c9ff;
+  background-color: var(--color-primary);
 }
 
 .two {
-  background-color: #ff0000;
+  background-color: var(--color-secondary);
 }
 
 .three {
-  background-color: #00ff55;
+  background-color: var(--color-primary);
 }
 
 .four {
-  background-color: #ffee00;
+  background-color: var(--color-secondary);
+}
+
+.imageRoot {
+  background-image: linear-gradient(to right, rgba(94,24,232, .3), rgba(94,24,232, .3)),
+  url('./images/home-large-3.jpg');
+  /* background-image: linear-gradient(105deg, rgba(94, 24, 232,.5) 0%, rgba(94, 24, 232,.5) 50%, transparent 50%),url('images/home-large-3.jpg'); */
+  background-position: center;
+  background-size: cover;
+  height: calc(100vh - 64px);
+  width: 100vw;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%);
+}
+
+.home__x {
+  color: var(--color-primary);
+  transition: transform .3s ease-in-out;
+}
+
+.home__x:hover {
+  display: inline-block;
+  transform: scale(1.5) rotate(360deg);
 }
 
 /* SLIDER */

@@ -3,16 +3,19 @@ import './App.css';
 import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom'
 import axios from 'axios'
 
-import Navbar from './components/layout/Navbar'
-import Home from './pages/Home'
-import Signup from './pages/Signup'
-import Login from './pages/Login'
+// import Home from './pages/Home'
 import {useAuth} from './contexts/authContext'
 import {useAdveristments} from './contexts/adveristmentContext'
 import jwtDecode from 'jwt-decode'
 import SingleAdvertisement from './pages/SingleAdvertisement';
 
-axios.defaults.baseURL = 'https://glacial-lake-62293.herokuapp.com/api/v1'
+// MATERIAL UI COMPONENTS
+import SignupMaterial from './pages/SignupMaterial'
+import LoginMaterial from './pages/LoginMaterial'
+import NavbarMaterial from './components/layout/NavbarMaterial'
+import HomeMaterial from './pages/HomeMaterial'
+
+// axios.defaults.baseURL = 'https://glacial-lake-62293.herokuapp.com/api/v1'
  
 function App() {
   const {auth, handleLogout, setAuth, fetchUser} = useAuth()
@@ -37,20 +40,20 @@ function App() {
 
   let authBar = auth ? (
       <Switch>
-        <Route exact path="/" component={Home}/>
+        <Route exact path="/" component={HomeMaterial}/>
         <Route path="/:id" component={SingleAdvertisement}/>
         <Redirect to="/"/>
       </Switch>
   ) : 
   (
     <Switch>
-      <Route exact path="/" component={Signup}/>
-      <Route path="/login" component={Login}/>
+      <Route exact path="/" component={SignupMaterial}/>
+      <Route path="/login" component={LoginMaterial}/>
     </Switch>)
 
   return (
     <Router>
-      <Navbar />
+      <NavbarMaterial />
       {authBar}
     </Router>
   )

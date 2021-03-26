@@ -15,6 +15,12 @@ import LoginMaterial from './pages/LoginMaterial'
 import NavbarMaterial from './components/layout/NavbarMaterial'
 import HomeMaterial from './pages/HomeMaterial'
 
+// INITIAL DESIGN COMPONENTS
+// import Signup from './pages/Signup'
+// import Login from './pages/Login'
+// import Navbar from './components/layout/Navbar'
+import Home from './pages/Home'
+
 axios.defaults.baseURL = 'https://glacial-lake-62293.herokuapp.com/api/v1'
  
 function App() {
@@ -40,7 +46,7 @@ function App() {
 
   let authBar = auth ? (
       <Switch>
-        <Route exact path="/" component={HomeMaterial}/>
+        <Route exact path="/" component={Home}/>
         <Route path="/:id" component={SingleAdvertisement}/>
         <Redirect to="/"/>
       </Switch>

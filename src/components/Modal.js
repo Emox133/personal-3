@@ -80,7 +80,6 @@ const Modal = ({isOpen, close}) => {
         formData.append('photo', image); 
     };
 
-
     return (
         <div className={isOpen ? "modal" : "modal__closed"}>
             <div className="modal__layer" onClick={close}></div>

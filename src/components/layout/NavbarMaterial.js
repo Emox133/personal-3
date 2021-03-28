@@ -9,7 +9,8 @@ import {Link} from 'react-router-dom'
 import {useAuth} from './../../contexts/authContext'
 import {useAdveristments} from './../../contexts/adveristmentContext'
 import {useHistory} from 'react-router-dom'
-import Modal from '../Modal'
+// import Modal from '../Modal'
+import ModalMaterial from '../ModalMaterial'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -21,14 +22,6 @@ const useStyles = makeStyles((theme) => ({
     color: '#eee',
     letterSpacing: '.1em',
     textTransform: 'capitalize',
-    marginRight: '0',
-    [theme.breakpoints.up('xs')]: {
-        // marginRight: '1rem',
-        fontSize: '1rem'
-    },
-    [theme.breakpoints.up('sm')]: {
-      fontSize: '1.2rem'
-    }
   },
   search: {
     position: 'relative',
@@ -137,7 +130,7 @@ const handleClose = (e) => {
   return (
     <>
     {authBar}
-    <Modal isOpen={open} close={handleClose}/>
+    <ModalMaterial isOpen={open} close={handleClose}/>
     </>
   );
 }

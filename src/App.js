@@ -7,7 +7,7 @@ import axios from 'axios'
 import {useAuth} from './contexts/authContext'
 import {useAdveristments} from './contexts/adveristmentContext'
 import jwtDecode from 'jwt-decode'
-import SingleAdvertisement from './pages/SingleAdvertisement';
+import SingleAdvertMaterial from './pages/SingleAdvertMaterial'
 
 // MATERIAL UI COMPONENTS
 import SignupMaterial from './pages/SignupMaterial'
@@ -19,7 +19,8 @@ import HomeMaterial from './pages/HomeMaterial'
 // import Signup from './pages/Signup'
 // import Login from './pages/Login'
 // import Navbar from './components/layout/Navbar'
-import Home from './pages/Home'
+// import Home from './pages/Home'
+// import SingleAdvertisement from './pages/SingleAdvertisement';
 
 axios.defaults.baseURL = 'https://glacial-lake-62293.herokuapp.com/api/v1'
  
@@ -46,8 +47,8 @@ function App() {
 
   let authBar = auth ? (
       <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route path="/:id" component={SingleAdvertisement}/>
+        <Route exact path="/" component={HomeMaterial}/>
+        <Route path="/:id" component={SingleAdvertMaterial}/>
         <Redirect to="/"/>
       </Switch>
   ) : 

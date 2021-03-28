@@ -31,6 +31,7 @@ const AdvertisementMaterial = ({advert}) => {
     const classes = useStyles()
     const history = useHistory()
     const {getAdvertisement} = useAdveristments()
+    const {logo} = advert
 
     const handleClick = (id) => {
         getAdvertisement(id, history)
@@ -42,7 +43,7 @@ const AdvertisementMaterial = ({advert}) => {
             <CardActionArea>
                 <CardMedia
                 className={classes.media}
-                image={Logo}
+                image={logo}
                 title="Contemplative Reptile"
                 />
                 <CardContent>

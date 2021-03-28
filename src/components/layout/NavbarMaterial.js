@@ -87,7 +87,7 @@ const handleClose = (e) => {
     <div className={classes.root}>
     <AppBar position="static">
       <Toolbar>
-        <Button component={Link} to="/" className={classes.buttonRoot} variant="text">
+        <Button component={Link} to="/signup" className={classes.buttonRoot} variant="text">
           Registracija
         </Button>
         <Button component={Link} to="/login" className={classes.buttonRoot} variant="text">

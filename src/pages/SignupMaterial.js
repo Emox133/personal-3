@@ -55,7 +55,7 @@ const Signup = () => {
         confirmPassword: ''
     })
 
-    const {setAuth} = useAuth()
+    const {auth, setAuth} = useAuth()
 
     const classes = useStyles()
 
@@ -96,7 +96,7 @@ const Signup = () => {
     }
 
     return (
-        <Grid className={classes.gridRoot} container alignContent="center" justify="center">
+       !auth ? <Grid className={classes.gridRoot} container alignContent="center" justify="center">
             <Grid item sm={2} />
             <Grid item className={classes.gridMain} xs={10} sm={8} md={4} >
                 <Paper className={classes.paperRoot} elevation={2}>
@@ -186,7 +186,7 @@ const Signup = () => {
                 </Paper>
             </Grid>
             <Grid item sm={2} />
-        </Grid>
+        </Grid> : null
     )
 }
 

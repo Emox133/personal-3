@@ -58,9 +58,9 @@ function App() {
   (
     <Switch>
       <Route exact path="/" component={HomeMaterial}/>
-      <Route exact path="/:id" component={SingleAdvertMaterial}/>
       <Route exact path="/signup" component={SignupMaterial}/>
       <Route exact path="/login" component={LoginMaterial}/>
+      <Route exact path="/:id" component={SingleAdvertMaterial}/>
     </Switch>)
 
   return (

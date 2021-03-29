@@ -1,8 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 #files
-/src/pages/BackupSingleComponent.js
-/src/backupSingle.css
 
 # dependencies
 /node_modules

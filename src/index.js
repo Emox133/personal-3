@@ -5,7 +5,6 @@ import App from './App';
 import {AuthProvider} from './contexts/authContext'
 import {AdvertisementsProvider} from './contexts/adveristmentContext'
 import {ThemeProvider} from '@material-ui/core'
-import FacebookMetaChange from './utils/FacebookMetaChange'
 import {theme} from './utils/theme'
 
 
@@ -13,7 +12,6 @@ let app =
 <ThemeProvider theme={theme}>
   <AuthProvider>
     <AdvertisementsProvider>
-      {/* <FacebookMetaChange /> */}
       <App />
     </AdvertisementsProvider>
   </AuthProvider>

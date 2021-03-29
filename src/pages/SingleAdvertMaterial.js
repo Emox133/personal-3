@@ -51,7 +51,7 @@ const useStyles = makeStyles(theme => ({
 
 const SingleAdvertMaterial = () => {
    const classes = useStyles()
-   const {advertisement} = useAdveristments()
+   const {advertisement, loading} = useAdveristments()
 
    const content = advertisement ? <SingleAdvertContentMaterial advertSingle={advertisement}/> : <Loader />
 
@@ -80,7 +80,7 @@ const SingleAdvertMaterial = () => {
                 <Box style={{background: 'coral', height: '33.3%', width: '100%'}}></Box>
                 <Box style={{background: 'crimson', height: '33.3%', width: '100%'}}></Box>
             </Grid>
-        </Grid>
+        </Grid> 
     )
 }
 

@@ -1,5 +1,7 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import SingleAdvertDetailsMaterial from './SingleAdvertDetailsMaterial'
+import {useAdveristments} from './../contexts/adveristmentContext'
+import {useLocation} from 'react-router-dom'
 
 import {Box} from '@material-ui/core'
 import {makeStyles} from '@material-ui/core/styles'
@@ -27,6 +29,13 @@ const useStyles = makeStyles(theme => ({
 const SingleAdvertContentMaterial = ({advertSingle}) => {
     const classes = useStyles()
     const {logo} = advertSingle
+    const {getAdvertisement} = useAdveristments()
+    const location = useLocation()
+    const id = location.pathname.split`/`[1]
+
+    useEffect(() => {
+        getAdvertisement(id)
+    }, [id])
 
     return (
         <>

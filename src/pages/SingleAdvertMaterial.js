@@ -56,14 +56,6 @@ const SingleAdvertMaterial = () => {
    const content = advertisement ? <SingleAdvertContentMaterial advertSingle={advertisement}/> : <Loader />
 
     return (
-        <>
-        <head>
-            <meta name="og:url" content={`http://localhost:3000/${advertisement._id}`} />
-            <meta name="og:type" content="article" />
-            <meta name="og:title" content={advertisement.name} />
-            <meta name="og:description" content={advertisement.description} />
-            <meta name="og:image" content="https://res.cloudinary.com/ddyyhypik/image/upload/v1617001994/xcuvhnugbpkgvgvkihv6.jpg" />
-        </head>
         <Grid container className={classes.gridContainerRoot}>
             <Grid item xs={0} sm={3} md={3} className={classes.gridItemOne}>
                 <Box style={{background: 'red', height: '33.3%', width: '100%'}}></Box>
@@ -89,7 +81,6 @@ const SingleAdvertMaterial = () => {
                 <Box style={{background: 'crimson', height: '33.3%', width: '100%'}}></Box>
             </Grid>
         </Grid>
-        </>
     )
 }
 

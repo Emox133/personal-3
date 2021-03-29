@@ -51,14 +51,14 @@ function App() {
   let authBar = auth ? (
       <Switch>
         <Route exact path="/" component={HomeMaterial}/>
-        <Route path="/:id" component={SingleAdvertMaterial}/>
+        <Route exact path="/:id" component={SingleAdvertMaterial}/>
         <Redirect to="/"/>
       </Switch>
   ) : 
   (
     <Switch>
       <Route exact path="/" component={HomeMaterial}/>
-      <Route path="/:id" component={SingleAdvertMaterial}/>
+      <Route exact path="/:id" component={SingleAdvertMaterial}/>
       <Route path="/signup" component={SignupMaterial}/>
       <Route path="/login" component={LoginMaterial}/>
     </Switch>)

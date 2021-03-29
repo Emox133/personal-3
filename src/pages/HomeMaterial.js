@@ -5,6 +5,7 @@ import {makeStyles} from '@material-ui/styles'
 import HomeImage from './../images/home-large-3.jpg'
 import LoaderMaterial from './../utils/LoaderMaterial'
 import {useAdveristments} from './../contexts/adveristmentContext'
+import {useAuth} from './../contexts/authContext'
 import Loader from '../utils/Loader';
 import Advertisements from './Advertisements';
 import AdvertisementsMaterial from './AdvertisementsMaterial';
@@ -49,6 +50,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 export default function HomeMaterial() {
+    const {auth} = useAuth()
     const [fields, setFields] = useState({query: ''})
     const classes = useStyles()
     const {loading, advertisements} = useAdveristments()

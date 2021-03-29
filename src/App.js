@@ -39,11 +39,14 @@ function App() {
       } else {
         axios.defaults.headers.common['Authorization'] = `${token}`;
         setAuth(true)
-        getAdveristments()
         fetchUser()
       }
     }
   }, [token, setAuth, handleLogout, page, fetchUser])
+
+  useEffect(() => {
+    getAdveristments()
+  }, [])
 
   let authBar = auth ? (
       <Switch>
@@ -54,7 +57,8 @@ function App() {
   ) : 
   (
     <Switch>
-      <Route exact path="/" component={SignupMaterial}/>
+      <Route exact path="/" component={HomeMaterial}/>
+      <Route path="/signup" component={SignupMaterial}/>
       <Route path="/login" component={LoginMaterial}/>
     </Switch>)
 

@@ -55,7 +55,7 @@ export default function HomeMaterial() {
     const classes = useStyles()
     const {loading, advertisements} = useAdveristments()
 
-    const filteredAdvertisements = advertisements.length > 0 ? advertisements.filter(el => {
+    const filteredAdvertisements = advertisements && advertisements.length > 0 ? advertisements.filter(el => {
         return el.name.includes(fields.query)
     }) : []
 

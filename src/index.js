@@ -13,7 +13,7 @@ let app =
 <ThemeProvider theme={theme}>
   <AuthProvider>
     <AdvertisementsProvider>
-      <FacebookMetaChange />
+      {/* <FacebookMetaChange /> */}
       <App />
     </AdvertisementsProvider>
   </AuthProvider>

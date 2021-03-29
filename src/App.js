@@ -22,7 +22,7 @@ import HomeMaterial from './pages/HomeMaterial'
 // import Home from './pages/Home'
 // import SingleAdvertisement from './pages/SingleAdvertisement';
 
-axios.defaults.baseURL = 'https://glacial-lake-62293.herokuapp.com/api/v1'
+// axios.defaults.baseURL = 'https://glacial-lake-62293.herokuapp.com/api/v1'
  
 function App() {
   const {auth, handleLogout, setAuth, fetchUser} = useAuth()

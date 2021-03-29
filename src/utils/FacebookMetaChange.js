@@ -8,11 +8,11 @@ export default function FacebookMetaChange () {
         <div className="wrapper">
           <MetaTags>
             <title>Page 1</title>
-            <meta property="url" content={`http://localhost:3000/${advertisement._id}`} />
-            <meta property="type" content="article" />
-            <meta property="title" content={advertisement.name} />
-            <meta property="description" content={advertisement.description} />
-            <meta property="image" content="https://res.cloudinary.com/ddyyhypik/image/upload/v1617001994/xcuvhnugbpkgvgvkihv6.jpg" />
+            <meta name="url" content={`http://localhost:3000/${advertisement._id}`} />
+            <meta name="type" content="article" />
+            <meta name="title" content={advertisement.name} />
+            <meta name="description" content={advertisement.description} />
+            <meta name="image" content="https://res.cloudinary.com/ddyyhypik/image/upload/v1617001994/xcuvhnugbpkgvgvkihv6.jpg" />
           </MetaTags>
         </div>
       )

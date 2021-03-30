@@ -42,17 +42,16 @@ const AdvertisementMaterial = ({advert}) => {
         <Card className={classes.cardRoot} style={{width: matches ? '70%' : '80%'}}>
             <CardActionArea>
                 <CardMedia
-                className={classes.media}
-                image={logo}
-                title="Contemplative Reptile"
+                    className={classes.media}
+                    image={logo}
+                    title="Company Logo"
                 />
                 <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
                     {advert.name}
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p">
-                    Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                    across all continents except Antarctica
+                    {advert.companyName}
                 </Typography>
                 </CardContent>
             </CardActionArea>

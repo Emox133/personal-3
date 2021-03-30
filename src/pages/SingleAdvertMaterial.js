@@ -2,6 +2,7 @@ import React from 'react'
 import {useAdveristments} from './../contexts/adveristmentContext'
 import SingleAdvertContentMaterial from './SingleAdvertContentMaterial'
 import Loader from '../utils/Loader'
+import MetaConfigurator from './../utils/MetaConfigurator'
 
 import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
@@ -56,6 +57,8 @@ const SingleAdvertMaterial = () => {
    const content = advertisement ? <SingleAdvertContentMaterial advertSingle={advertisement}/> : <Loader />
 
     return (
+        <>
+        <MetaConfigurator description={advertisement.description} title={advertisement.name} image={advertisement.logo}/>
         <Grid container className={classes.gridContainerRoot}>
             <Grid item xs={0} sm={3} md={3} className={classes.gridItemOne}>
                 <Box style={{background: 'red', height: '33.3%', width: '100%'}}></Box>
@@ -81,6 +84,7 @@ const SingleAdvertMaterial = () => {
                 <Box style={{background: 'crimson', height: '33.3%', width: '100%'}}></Box>
             </Grid>
         </Grid> 
+        </>
     )
 }
 

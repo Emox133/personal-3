@@ -17,14 +17,14 @@ html {
 /* XS 1rem = 7px */ 
 @media only screen and (max-width: 0px) {
   html {
-    font-size: 43.75%;
+    font-size: 50%;
   }
 }
 
 /* SM 1rem = 9px */ 
 @media only screen and (max-width: 600px) {
   html {
-    font-size: 56.25%; 
+    font-size: 62.5%;
   }
 }
 

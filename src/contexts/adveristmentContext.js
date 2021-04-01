@@ -23,12 +23,13 @@ export function AdvertisementsProvider({ children }) {
       setLoading(true)
       axios.get('/oglasi').then(res => {
           if(res.status === 200) {
-              setAdveristments(...advertisements, res.data.advertisements)
+              setAdveristments(...advertisements, res.data.advertisements)      
               setLoading(false)
           }
       })
       .catch(err => {
         console.log(err.response)
+        // alert('Something went wrong. 😰')
         setLoading(false)
       })
   }
@@ -43,6 +44,7 @@ export function AdvertisementsProvider({ children }) {
       }
     }).catch(err => {
       console.log(err.response)
+      // alert('Something went wrong. 😰')
       setLoading(false)
     })
   }, [])

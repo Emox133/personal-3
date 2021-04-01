@@ -76,6 +76,7 @@ const Login = () => {
         })
         .catch(err => {
             console.log(err.response)
+            // alert('Something went wrong. 😰')
             const msg = err.response.data.message
             setErrors({combinedMessage: msg})
         })

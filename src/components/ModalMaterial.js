@@ -29,6 +29,7 @@ export default function FormDialog({isOpen, close}) {
       positionsLeft: ''
   })
 
+  // FINISH THIS
   const [errors, setErrors] = useState({
       name: '',
       companyName: '',

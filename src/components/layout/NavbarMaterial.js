@@ -1,15 +1,14 @@
 import React, {useState} from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import InputBase from '@material-ui/core/InputBase';
+// import InputBase from '@material-ui/core/InputBase';
 import Button from '@material-ui/core/Button'
 import { fade, makeStyles } from '@material-ui/core/styles';
-import SearchIcon from '@material-ui/icons/Search';
+// import SearchIcon from '@material-ui/icons/Search';
 import {Link} from 'react-router-dom'
 import {useAuth} from './../../contexts/authContext'
 import {useAdveristments} from './../../contexts/adveristmentContext'
 import {useHistory} from 'react-router-dom'
-// import Modal from '../Modal'
 import ModalMaterial from '../ModalMaterial'
 
 
@@ -70,7 +69,7 @@ export default function Navbar() {
   const classes = useStyles();
   const {auth, handleLogout} = useAuth()
   const [open, setOpen] = useState(false)
-  const {advertisements, loading} = useAdveristments()
+  const {advertisements} = useAdveristments()
   const history = useHistory()
 
   const handleOpen = () => {

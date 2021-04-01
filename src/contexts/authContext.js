@@ -18,6 +18,7 @@ export function AuthProvider({ children }) {
       }
     }).catch(err => {
       console.log(err.response)
+      // alert('Something went wrong. 😰')
     })
   }, [])
 
@@ -28,9 +29,9 @@ export function AuthProvider({ children }) {
       setAuth(false)
       history.push('/login')
       history.go(0)
-      console.log(res)
     }).catch(err => {
       console.log(err.response)
+      // alert('Something went wrong. 😰')
     })
   }, [])
 

@@ -3,7 +3,7 @@ import {CssBaseline, Typography, Container, TextField} from '@material-ui/core';
 import {makeStyles} from '@material-ui/styles'
 
 import {useAdveristments} from './../contexts/adveristmentContext'
-import {useAuth} from './../contexts/authContext'
+// import {useAuth} from './../contexts/authContext'
 import Loader from '../utils/Loader';
 import AdvertisementsMaterial from './AdvertisementsMaterial';
 
@@ -47,7 +47,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 export default function HomeMaterial() {
-    const {auth} = useAuth()
+    // const {auth} = useAuth()
     const [fields, setFields] = useState({query: ''})
     const classes = useStyles()
     const {loading, advertisements} = useAdveristments()

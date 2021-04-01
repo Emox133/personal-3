@@ -51,7 +51,7 @@ const useStyles = makeStyles(theme => ({
 
 const SingleAdvertMaterial = () => {
    const classes = useStyles()
-   const {advertisement, loading} = useAdveristments()
+   const {advertisement} = useAdveristments()
 
    const content = advertisement ? <SingleAdvertContentMaterial advertSingle={advertisement}/> : <Loader />
 

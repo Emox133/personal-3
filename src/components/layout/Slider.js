@@ -15,8 +15,6 @@ const Slider = () => {
         }, 3000)
     }, [])
 
-
-    console.log('Slider Rendering...')
     return (
         <div className="slider">
             <div className="slides">

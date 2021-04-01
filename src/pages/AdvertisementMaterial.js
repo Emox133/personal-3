@@ -1,6 +1,5 @@
 import React from 'react'
 import {useHistory} from 'react-router-dom'
-import Logo from './../images/home-large-3.jpg'
 import {useAdveristments} from './../contexts/adveristmentContext'
 
 import Grid from '@material-ui/core/Grid'

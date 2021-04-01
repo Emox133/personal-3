@@ -1,5 +1,5 @@
 import React from 'react'
-import {useAdveristments} from './../contexts/adveristmentContext'
+// import {useAdveristments} from './../contexts/adveristmentContext'
 import AdvertisementMaterial from './AdvertisementMaterial'
 
 import Grid from '@material-ui/core/Grid'

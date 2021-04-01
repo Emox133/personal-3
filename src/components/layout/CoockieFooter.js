@@ -14,6 +14,7 @@ const CoockieFooter = () => {
         axios.get('/users/cookies').then(res => {
             setOpen(false)
         }).catch(err => {
+            // alert('Something went wrong. 😰')
             console.log(err.response)
         })
     }

@@ -43,16 +43,16 @@ function App() {
   let authBar = auth ? (
       <Switch>
         <Route exact path="/" component={HomeMaterial}/>
-        <Route exact path="/:id" component={SingleAdvertMaterial}/>
+        <Route path="/oglasi/:id" component={SingleAdvertMaterial}/>
         <Redirect to="/"/>
       </Switch>
   ) : 
   (
     <Switch>
       <Route exact path="/" component={HomeMaterial}/>
-      <Route exact path="/signup" component={SignupMaterial}/>
-      <Route exact path="/login" component={LoginMaterial}/>
-      <Route exact path="/:id" component={SingleAdvertMaterial}/>
+      <Route path="/signup" component={SignupMaterial}/>
+      <Route path="/login" component={LoginMaterial}/>
+      <Route path="/oglasi/:id" component={SingleAdvertMaterial}/>
     </Switch>)
 
   return (

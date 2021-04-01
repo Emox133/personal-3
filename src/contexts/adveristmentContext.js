@@ -40,7 +40,7 @@ export function AdvertisementsProvider({ children }) {
       if(res.status === 200) {
         setAdvertisement(res.data.advertisement)
         setLoading(false)
-        history.push(id)
+        history.push(`oglasi/${id}`)
       }
     }).catch(err => {
       console.log(err.response)

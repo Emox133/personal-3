@@ -57,14 +57,14 @@ const SingleAdvertMaterial = () => {
 
     return (
         <Grid container className={classes.gridContainerRoot}>
-            <Grid item xs={0} sm={3} md={3} className={classes.gridItemOne}>
+            <Grid item xs={false} sm={3} md={3} className={classes.gridItemOne}>
                 <Box style={{background: 'red', height: '33.3%', width: '100%'}}></Box>
                 <Box style={{background: 'blue', height: '33.3%', width: '100%'}}></Box>
                 <Box style={{background: 'green', height: '33.3%', width: '100%'}}></Box>
             </Grid>
             <Grid item xs={8} sm={6} className={classes.gridItemTwo}>
                 <Paper 
-                    elevation="3"
+                    elevation={3}
                     className={classes.paperRoot}
                 >
                     {content}

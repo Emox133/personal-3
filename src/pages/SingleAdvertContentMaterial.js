@@ -31,7 +31,7 @@ const SingleAdvertContentMaterial = ({advertSingle}) => {
     const {logo} = advertSingle
     const {getAdvertisement} = useAdveristments()
     const location = useLocation()
-    const id = location.pathname.split`/`[1]
+    const id = location.pathname.split`/`[2]
 
     useEffect(() => {
         getAdvertisement(id)

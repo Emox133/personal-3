@@ -98,9 +98,7 @@ export default function SingleAdvertDetailsMaterial({advertSingle}) {
                 variant="caption"
                 className={classes.typoDescRoot}
             >
-                Reporting to the Project Manager, based in Banja Luka or Sarajevo office, this position will be responsible for providing administrative and project support to Project Manager.
-
-Project Officer will be responsible for: providing administrative and programmatic support to Project Manager, for office management,  including maintaining projects' filing system, coordination of activities with partners and stakeholders, providing technical assistance and monitoring partners’ narrative and financial reporting processes, which includes frequent travelling within the project area of responsibility and in the Western Balkans region when it is necessary, logistic and programmatic support in organisation of trainings and workshops, including organizing meetings with government, institutes and schools at all levels representatives within the project steering committees, collection and translation of project partners’ reports, providing inputs for project  reports.
+              {description}
             </Typography>
         </Box>
     </List>

@@ -59,7 +59,6 @@ export default function FormDialog({isOpen, close}) {
         [e.target.name]: e.target.value
     })
   }
-  console.log(errors)
 
   let image;
   const formData = new FormData();

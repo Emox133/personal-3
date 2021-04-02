@@ -49,12 +49,21 @@ export function AdvertisementsProvider({ children }) {
     })
   }, [])
 
+  const deleteAdvertisement = (advertId) => {
+    axios.delete(`/oglasi/${advertId}`).then(res => {
+      console.log(res)
+    }).catch(err => {
+      console.log(err.response)
+    })
+  }
+
   const value = {
       advertisements,
       advertisement,
       setAdveristments,
       getAdveristments,
       getAdvertisement,
+      deleteAdvertisement,
       handlePageIncrease,
       visible,
       setVisible,

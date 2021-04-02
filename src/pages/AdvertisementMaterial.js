@@ -1,7 +1,9 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {useHistory} from 'react-router-dom'
 import {useAdveristments} from './../contexts/adveristmentContext'
+import {useAuth} from './../contexts/authContext'
 
+import DeleteAdvertisement from './../components/advertisements/DeleteAdvertisement'
 import Grid from '@material-ui/core/Grid'
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -12,6 +14,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import {makeStyles} from '@material-ui/core/styles'
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { Box } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
     cardRoot: {
@@ -22,6 +25,11 @@ const useStyles = makeStyles(theme => ({
     },
     buttonRoot: {
         margin: '0 auto'
+    },
+    boxRoot: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'flex-start'
     }
 }))
 
@@ -30,12 +38,17 @@ const AdvertisementMaterial = ({advert}) => {
     const classes = useStyles()
     const history = useHistory()
     const {getAdvertisement} = useAdveristments()
-    const {logo} = advert
+    const {user, auth} = useAuth()
+    const {logo, _id, creator} = advert
 
     const handleClick = (id) => {
         getAdvertisement(id, history)
     }
 
+    const isOwnAdvert = () => {
+        return creator === user._id
+    }
+    
     return (
         <Grid item xs={12} sm={6} md={4} lg={3}>
         <Card className={classes.cardRoot} style={{width: matches ? '70%' : '80%'}}>
@@ -46,9 +59,12 @@ const AdvertisementMaterial = ({advert}) => {
                     title="Company Logo"
                 />
                 <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                    {advert.name}
-                </Typography>
+                    <Box className={classes.boxRoot}>
+                        <Typography gutterBottom variant="h5" component="h2">
+                            {advert.name}
+                        </Typography>
+                       {isOwnAdvert() && auth ? <DeleteAdvertisement _id={_id}/> : null}
+                    </Box>
                 <Typography variant="body2" color="textSecondary" component="p">
                     {advert.companyName}
                 </Typography>

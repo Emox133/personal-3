@@ -90,7 +90,7 @@ export default function HomeMaterial() {
                     variant="h3"
                     // align="center"
                 >
-                    Pronađi novi posao među <span className={classes.homeX}>{advertisements.length > 0 ? advertisements.length : 'X'}</span> pronađenih oglasa
+                    Pronađi novi posao među <span className={classes.homeX}>{advertisements.length > 0 ? advertisements.length : 'X'}</span> ponuđenih oglasa
                 </Typography>
                 <TextField 
                     // placeholder="Unesite ključnu riječ..."

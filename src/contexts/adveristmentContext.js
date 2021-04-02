@@ -51,7 +51,9 @@ export function AdvertisementsProvider({ children }) {
 
   const deleteAdvertisement = (advertId) => {
     axios.delete(`/oglasi/${advertId}`).then(res => {
-      console.log(res)
+      if(res.status === 204) {
+        window.location.reload()
+      }
     }).catch(err => {
       console.log(err.response)
     })

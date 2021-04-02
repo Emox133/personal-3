@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {CssBaseline, Typography, Container, TextField} from '@material-ui/core';
 import {makeStyles} from '@material-ui/styles'
+import Hero from './../images/home-large-3.jpg'
 
 import {useAdveristments} from './../contexts/adveristmentContext'
 // import {useAuth} from './../contexts/authContext'
@@ -15,9 +16,21 @@ const useStyles = makeStyles(theme => ({
         padding: '0'
     },
     imageRoot: {
-        height: '100%',
-        width: '100%',
-        backgroundImage: 'linear-gradient(to right, crimson, orangered)'
+        backgroundImage: `linear-gradient(to right, rgba(94,24,232, .3), rgba(94,24,232, .3)), url(${Hero})`,
+        // backgroundImage: `linear-gradient(105deg, rgba(94, 24, 232,.5) 0%, rgba(94, 24, 232,.5) 50%, transparent 50%), url(${Hero})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        height: 'calc(100vh - 64px)',
+        width: '100vw',
+        clipPath: 'polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%)'
+    },
+    homeX: {
+        color: '#5E18E8',
+        transition: 'transform .3s ease-in-out',
+        '&:hover': {
+            display: 'inline-block',
+            transform: 'scale(1.5) rotate(360deg)'
+        }
     },
     boxRoot: {
         width: '100%',
@@ -70,14 +83,14 @@ export default function HomeMaterial() {
     <CssBaseline />
     {!loading ? 
         <Container className={classes.containerRoot} maxWidth="xl">
-            <div className="imageRoot"></div>
+            <div className={classes.imageRoot}></div>
             <div className={classes.boxRoot}>
                 <Typography 
                     className={classes.typographyRoot}
                     variant="h3"
                     // align="center"
                 >
-                    Pronađi novi posao među <span className="home__x">{advertisements.length > 0 ? advertisements.length : 'X'}</span> pronađenih oglasa
+                    Pronađi novi posao među <span className={classes.homeX}>{advertisements.length > 0 ? advertisements.length : 'X'}</span> pronađenih oglasa
                 </Typography>
                 <TextField 
                     // placeholder="Unesite ključnu riječ..."

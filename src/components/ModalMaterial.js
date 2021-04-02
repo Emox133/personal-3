@@ -118,6 +118,10 @@ export default function FormDialog({isOpen, close}) {
               hidden="hidden"
               type="file"
               onChange={handleImage}
+              // error
+              // id="outlined-error-helper-text"
+              // label={errors.combinedMessage ? 'Error' : null}
+              // helperText={errors.combinedMessage ? errors.combinedMessage : null}
             />
             <Button
               color="primary"
@@ -133,6 +137,10 @@ export default function FormDialog({isOpen, close}) {
               type="text"
               fullWidth
               onChange={handleInputChange}
+              error
+              id="outlined-error-helper-text"
+              label={errors.name ? 'Error' : null}
+              helperText={errors.name ? errors.name : null}
             />
             <TextField
               name="companyName"
@@ -141,6 +149,10 @@ export default function FormDialog({isOpen, close}) {
               type="text"
               fullWidth
               onChange={handleInputChange}
+              error
+              id="outlined-error-helper-text"
+              label={errors.companyName ? 'Error' : null}
+              helperText={errors.companyName ? errors.companyName : null}
             />
             <TextField
               name="location"
@@ -149,6 +161,10 @@ export default function FormDialog({isOpen, close}) {
               type="text"
               fullWidth
               onChange={handleInputChange}
+              error
+              id="outlined-error-helper-text"
+              label={errors.location ? 'Error' : null}
+              helperText={errors.location ? errors.location : null}
             />
             <TextField
               name="website"
@@ -165,6 +181,10 @@ export default function FormDialog({isOpen, close}) {
               type="email"
               fullWidth
               onChange={handleInputChange}
+              error
+              id="outlined-error-helper-text"
+              label={errors.companyEmail ? 'Error' : null}
+              helperText={errors.companyEmail ? errors.companyEmail : null}
             />
             <TextField
               name="expiresIn"
@@ -174,6 +194,10 @@ export default function FormDialog({isOpen, close}) {
               type="date"
               fullWidth
               onChange={handleInputChange}
+              error
+              id="outlined-error-helper-text"
+              label={errors.expiresIn ? 'Error' : null}
+              helperText={errors.expiresIn ? errors.expiresIn : null}
             />
             <TextField
               name="positionsLeft"
@@ -182,6 +206,10 @@ export default function FormDialog({isOpen, close}) {
               type="text"
               fullWidth
               onChange={handleInputChange}
+              error
+              id="outlined-error-helper-text"
+              label={errors.positionsLeft ? 'Error' : null}
+              helperText={errors.positionsLeft ? errors.positionsLeft : null}
             />
             <TextField
               name="companyNumber"
@@ -190,6 +218,10 @@ export default function FormDialog({isOpen, close}) {
               type="tel"
               fullWidth
               onChange={handleInputChange}
+              error
+              id="outlined-error-helper-text"
+              label={errors.companyNumber ? 'Error' : null}
+              helperText={errors.companyNumber ? errors.companyNumber : null}
             />
             <TextField
               name="description"
@@ -200,6 +232,10 @@ export default function FormDialog({isOpen, close}) {
               type="text"
               fullWidth
               onChange={handleInputChange}
+              error
+              id="outlined-error-helper-text"
+              label={errors.description ? 'Error' : null}
+              helperText={errors.description ? errors.description : null}
             />
 
         <DialogActions>

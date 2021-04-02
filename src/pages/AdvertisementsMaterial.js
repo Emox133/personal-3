@@ -8,7 +8,7 @@ import { Typography } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
    gridRoot: {
-       height: '100%',
+       height: 'calc(100vh - 64px)',
        marginTop: '1rem'
    },
    typographyRoot: {

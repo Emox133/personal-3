@@ -59,6 +59,7 @@ export default function FormDialog({isOpen, close}) {
         [e.target.name]: e.target.value
     })
   }
+  console.log(errors)
 
   let image;
   const formData = new FormData();
@@ -133,14 +134,12 @@ export default function FormDialog({isOpen, close}) {
             <TextField
               name="name"
               id="name"
-              label="Pozicija"
               type="text"
               fullWidth
               onChange={handleInputChange}
-              error
-              id="outlined-error-helper-text"
-              label={errors.name ? 'Error' : null}
-              helperText={errors.name ? errors.name : null}
+              error={errors.name.message}
+              label={errors.name ? 'Error' : 'Pozicija'}
+              helperText={errors.name ? errors.name.message : null}
             />
             <TextField
               name="companyName"
@@ -149,10 +148,9 @@ export default function FormDialog({isOpen, close}) {
               type="text"
               fullWidth
               onChange={handleInputChange}
-              error
-              id="outlined-error-helper-text"
-              label={errors.companyName ? 'Error' : null}
-              helperText={errors.companyName ? errors.companyName : null}
+              error={errors.companyName.message}
+              label={errors.companyName ? 'Error' : "Ime Kompanije"}
+              helperText={errors.companyName ? errors.companyName.message : null}
             />
             <TextField
               name="location"
@@ -161,10 +159,9 @@ export default function FormDialog({isOpen, close}) {
               type="text"
               fullWidth
               onChange={handleInputChange}
-              error
-              id="outlined-error-helper-text"
-              label={errors.location ? 'Error' : null}
-              helperText={errors.location ? errors.location : null}
+              error={errors.location.message}
+              label={errors.location ? 'Error' : "Lokacija"}
+              helperText={errors.location ? errors.location.message : null}
             />
             <TextField
               name="website"
@@ -181,10 +178,9 @@ export default function FormDialog({isOpen, close}) {
               type="email"
               fullWidth
               onChange={handleInputChange}
-              error
-              id="outlined-error-helper-text"
-              label={errors.companyEmail ? 'Error' : null}
-              helperText={errors.companyEmail ? errors.companyEmail : null}
+              error={errors.companyEmail.message}
+              label={errors.companyEmail ? 'Error' : "E-Mail Kompanije"}
+              helperText={errors.companyEmail ? errors.companyEmail.message : null}
             />
             <TextField
               name="expiresIn"
@@ -194,10 +190,8 @@ export default function FormDialog({isOpen, close}) {
               type="date"
               fullWidth
               onChange={handleInputChange}
-              error
-              id="outlined-error-helper-text"
-              label={errors.expiresIn ? 'Error' : null}
-              helperText={errors.expiresIn ? errors.expiresIn : null}
+              error={errors.expiresIn.message}
+              helperText={errors.expiresIn ? errors.expiresIn.message : null}
             />
             <TextField
               name="positionsLeft"
@@ -206,10 +200,9 @@ export default function FormDialog({isOpen, close}) {
               type="text"
               fullWidth
               onChange={handleInputChange}
-              error
-              id="outlined-error-helper-text"
-              label={errors.positionsLeft ? 'Error' : null}
-              helperText={errors.positionsLeft ? errors.positionsLeft : null}
+              error={errors.positionsLeft.message}
+              label={errors.positionsLeft ? 'Error' : "Broj Slobodnih Mjesta"}
+              helperText={errors.positionsLeft ? errors.positionsLeft.message : null}
             />
             <TextField
               name="companyNumber"
@@ -218,10 +211,9 @@ export default function FormDialog({isOpen, close}) {
               type="tel"
               fullWidth
               onChange={handleInputChange}
-              error
-              id="outlined-error-helper-text"
-              label={errors.companyNumber ? 'Error' : null}
-              helperText={errors.companyNumber ? errors.companyNumber : null}
+              error={errors.companyNumber.message}
+              label={errors.companyNumber ? 'Error' : "Broj Telefona"}
+              helperText={errors.companyNumber ? errors.companyNumber.message : null}
             />
             <TextField
               name="description"
@@ -232,12 +224,10 @@ export default function FormDialog({isOpen, close}) {
               type="text"
               fullWidth
               onChange={handleInputChange}
-              error
-              id="outlined-error-helper-text"
-              label={errors.description ? 'Error' : null}
-              helperText={errors.description ? errors.description : null}
+              error={errors.description.message}
+              label={errors.description ? 'Error' : "Opis Radnog Mjesta"}
+              helperText={errors.description ? errors.description.message : null}
             />
-
         <DialogActions>
           <Button variant="contained" onClick={close} color="secondary">
             Cancel

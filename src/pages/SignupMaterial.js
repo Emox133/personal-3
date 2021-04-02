@@ -54,6 +54,8 @@ const Signup = () => {
         password: '',
         confirmPassword: ''
     })
+    
+    console.log(errors)
 
     const {auth, setAuth} = useAuth()
 

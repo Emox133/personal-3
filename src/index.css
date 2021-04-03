@@ -68,5 +68,39 @@ code {
   --color-primary: #5E18E8;
   --color-secondary: #000000;
   --color-tertiary: #875CC0;
+  --color-white-1: #ffffff;
+  --color-success: #4CAF50;
+  --color-danger: #F44336;
 }
 
+/* ALERTS */
+.success,
+.danger,
+.warning,
+.info {
+  height: 40px;
+  min-width: 30%;
+  padding: 0 1rem;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: fixed;
+  left: 50%;
+  bottom: .5rem;
+  transform: translate(-50%, 0);
+  z-index: 20000;
+  border-radius: 0.5rem;
+}
+
+.success {
+  color: var(--color-white-1);
+  background: var(--color-success);
+}
+
+.danger {
+  color: var(--color-white-1);
+  background: var(--color-danger);
+}
+.warning {}
+.info {}

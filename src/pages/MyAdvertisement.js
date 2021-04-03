@@ -40,8 +40,7 @@ const MyAdvertisement = ({advert}) => {
     const classes = useStyles()
     const history = useHistory()
     const {getAdvertisement} = useAdveristments()
-    const {user, auth} = useAuth()
-    const {logo, _id, creator} = advert
+    const {logo, _id} = advert
 
     const handleClick = (id) => {
         getAdvertisement(id, history)
@@ -68,7 +67,7 @@ const MyAdvertisement = ({advert}) => {
                 </CardContent>
             </CardActionArea>
             <CardActions>
-                <Button variant="outlined" size="small" color="primary" className={classes.buttonRoot} onClick={() => handleClick(advert._id)}>
+                <Button variant="outlined" size="small" color="primary" className={classes.buttonRoot} onClick={() => handleClick(_id)}>
                     Konkuriši
                 </Button>
             </CardActions>

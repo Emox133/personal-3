@@ -14,7 +14,7 @@ import ModalMaterial from '../ModalMaterial'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   buttonRoot: {
     padding: '0',

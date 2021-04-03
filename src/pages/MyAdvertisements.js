@@ -2,6 +2,7 @@ import React from 'react'
 import {useAdveristments} from './../contexts/adveristmentContext'
 import {useAuth} from './../contexts/authContext'
 import MyAdvertisement from './MyAdvertisement'
+import NoConnection from './../components/layout/NoConnection'
 
 import Grid from '@material-ui/core/Grid'
 import {makeStyles} from '@material-ui/core/styles'

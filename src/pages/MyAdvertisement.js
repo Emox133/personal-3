@@ -3,7 +3,6 @@ import {useHistory} from 'react-router-dom'
 import {useAdveristments} from './../contexts/adveristmentContext'
 import {useAuth} from './../contexts/authContext'
 
-import DeleteAdvertisement from './../components/advertisements/DeleteAdvertisement'
 import Grid from '@material-ui/core/Grid'
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -36,7 +35,7 @@ const useStyles = makeStyles(theme => ({
     }
 }))
 
-const AdvertisementMaterial = ({advert}) => {
+const MyAdvertisement = ({advert}) => {
     const matches = useMediaQuery('(max-width:600px)');
     const classes = useStyles()
     const history = useHistory()
@@ -46,10 +45,6 @@ const AdvertisementMaterial = ({advert}) => {
 
     const handleClick = (id) => {
         getAdvertisement(id, history)
-    }
-
-    const isOwnAdvert = () => {
-        return creator === user._id
     }
     
     return (
@@ -66,7 +61,6 @@ const AdvertisementMaterial = ({advert}) => {
                         <Typography gutterBottom variant="h5" component="h2">
                             {advert.name}
                         </Typography>
-                       {isOwnAdvert() && auth ? <DeleteAdvertisement _id={_id}/> : null}
                     </Box>
                 <Typography variant="body2" color="textSecondary" component="p">
                     {advert.companyName}
@@ -83,4 +77,4 @@ const AdvertisementMaterial = ({advert}) => {
     )
 }
 
-export default AdvertisementMaterial
+export default MyAdvertisement

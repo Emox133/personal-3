@@ -45,7 +45,7 @@ const useStyles = makeStyles(theme => ({
     },
     paperRoot: {
         height: '100%',
-        background: '#eee'
+        background: '#fff'
     }
 }))
 

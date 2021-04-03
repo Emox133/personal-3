@@ -21,6 +21,8 @@ const useStyles = makeStyles((theme) => ({
     color: '#eee',
     letterSpacing: '.1em',
     textTransform: 'capitalize',
+    minWidth: '0',
+    marginRight : '1rem'
   },
   search: {
     position: 'relative',
@@ -107,6 +109,9 @@ const handleClose = (e) => {
         </Button>
         <Button onClick={handleOpen} component={Link} to="" className={classes.buttonRoot} variant="text">
           Novi Oglas
+        </Button>
+        <Button component={Link} to="/moji-oglasi" className={classes.buttonRoot} variant="text">
+          Moji Oglasi
         </Button>
         <Button onClick={() => {handleLogout(history)}} component={Link} to="/" className={classes.buttonRoot} variant="text">
           Odjava

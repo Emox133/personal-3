@@ -12,8 +12,9 @@ import SignupMaterial from './pages/SignupMaterial'
 import LoginMaterial from './pages/LoginMaterial'
 import NavbarMaterial from './components/layout/NavbarMaterial'
 import HomeMaterial from './pages/HomeMaterial'
+import MyAdvertisements from './pages/MyAdvertisements'
 
-axios.defaults.baseURL = 'https://glacial-lake-62293.herokuapp.com/api/v1'
+// axios.defaults.baseURL = 'https://glacial-lake-62293.herokuapp.com/api/v1'
  
 function App() {
   const {auth, handleLogout, setAuth, fetchUser} = useAuth()
@@ -43,6 +44,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={HomeMaterial}/>
         <Route path="/oglasi/:id" component={SingleAdvertMaterial}/>
+        <Route path="/moji-oglasi" component={MyAdvertisements} />
         <Redirect to="/"/>
       </Switch>
   ) : 

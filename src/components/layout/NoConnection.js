@@ -23,7 +23,7 @@ export default function NoConnection() {
 
   let content = offline ? (
     <>
-      <Allert severity="danger .disabled">
+      <Allert severity="danger">
           <ErrorIcon style={{margin: '0 .3rem 0 .6rem'}}/>
           <Typography variant="body1">
               Molimo vas provjerite vašu internet konekciju.

@@ -70,11 +70,11 @@ export default function FormDialog({isOpen, close}) {
   const handleSubmit = e => {
     e.preventDefault()
     // CONSIDER ALTERNATIVE
-    // formData.append('name', fields.name
-    // .normalize("NFD")
-    // .replace(/[\u0300-\u036f]/g, "")
-    // .replaceAll('Đ', 'Dj')
-    // .replaceAll('đ', 'dj'));
+    formData.append('name', fields.name
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replaceAll('Đ', 'Dj')
+    .replaceAll('đ', 'dj'))
     formData.append('photo', fields.photo); 
     formData.append('name', fields.name)
     formData.append('companyName', fields.companyName)

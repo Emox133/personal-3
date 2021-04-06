@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function FormDialog({isOpen, close}) {
     const [fields, setFields] = useState({
-      photo: '',
+      // photo: '',
       name: '',
       companyName: '',
       companyEmail: '',
@@ -50,10 +50,11 @@ export default function FormDialog({isOpen, close}) {
 
   const handleImage = e => {
     image = e.target.files[0]
-    setFields({
-      ...fields,
-      photo: image
-    })
+    formData.append('photo', image)
+    // setFields({
+    //   ...fields,
+    //   photo: image
+    // })
   };
 
   const handleInputChange = (e) => {
@@ -74,7 +75,7 @@ export default function FormDialog({isOpen, close}) {
     .replace(/[\u0300-\u036f]/g, "")
     .replaceAll('Đ', 'Dj')
     .replaceAll('đ', 'dj'));
-    formData.append('photo', fields.photo); 
+    // formData.append('photo', fields.photo); 
     formData.append('companyName', fields.companyName)
     formData.append('companyEmail', fields.companyEmail)
     formData.append('companyNumber', fields.companyNumber)

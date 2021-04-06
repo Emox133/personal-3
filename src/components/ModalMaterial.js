@@ -121,7 +121,7 @@ export default function FormDialog({isOpen, close}) {
           <DialogContentText>
             Ispunite polja ispod kako biste objavili oglas.
           </DialogContentText>
-          <form encType="multipart/form-data" onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit}>
           <input
               name="photo"
               id="photo"
@@ -146,7 +146,7 @@ export default function FormDialog({isOpen, close}) {
               type="text"
               fullWidth
               onChange={handleInputChange}
-              // error={errors.name && errors.name.message}
+              error={errors.name && errors.name.message}
               label={errors.name ? 'Error' : 'Pozicija'}
               helperText={errors.name ? errors.name.message : null}
             />
@@ -156,7 +156,7 @@ export default function FormDialog({isOpen, close}) {
               type="text"
               fullWidth
               onChange={handleInputChange}
-              // error={errors.companyName && errors.companyName.message}
+              error={errors.companyName && errors.companyName.message}
               label={errors.companyName ? 'Error' : "Ime Kompanije"}
               helperText={errors.companyName ? errors.companyName.message : null}
             />
@@ -166,13 +166,13 @@ export default function FormDialog({isOpen, close}) {
               type="text"
               fullWidth
               onChange={handleInputChange}
-              // error={errors.location && errors.location.message}
+              error={errors.location && errors.location.message}
               label={errors.location ? 'Error' : "Lokacija"}
               helperText={errors.location ? errors.location.message : null}
             />
             <TextField
               name="website"
-              // id="website"
+              id="website"
               label="Web Stranica"
               type="text"
               fullWidth
@@ -184,7 +184,7 @@ export default function FormDialog({isOpen, close}) {
               type="email"
               fullWidth
               onChange={handleInputChange}
-              // error={errors.companyEmail && errors.companyEmail.message}
+              error={errors.companyEmail && errors.companyEmail.message}
               label={errors.companyEmail ? 'Error' : "E-Mail Kompanije"}
               helperText={errors.companyEmail ? errors.companyEmail.message : null}
             />
@@ -205,7 +205,7 @@ export default function FormDialog({isOpen, close}) {
               type="text"
               fullWidth
               onChange={handleInputChange}
-              // error={errors.positionsLeft && errors.positionsLeft.message}
+              error={errors.positionsLeft && errors.positionsLeft.message}
               label={errors.positionsLeft ? 'Error' : "Broj Slobodnih Mjesta"}
               helperText={errors.positionsLeft ? errors.positionsLeft.message : null}
             />
@@ -215,7 +215,7 @@ export default function FormDialog({isOpen, close}) {
               type="tel"
               fullWidth
               onChange={handleInputChange}
-              // error={errors.companyNumber && errors.companyNumber.message}
+              error={errors.companyNumber && errors.companyNumber.message}
               label={errors.companyNumber ? 'Error' : "Broj Telefona"}
               helperText={errors.companyNumber ? errors.companyNumber.message : null}
             />
@@ -227,7 +227,7 @@ export default function FormDialog({isOpen, close}) {
               type="text"
               fullWidth
               onChange={handleInputChange}
-              // error={errors.description && errors.description.message}
+              error={errors.description && errors.description.message}
               label={errors.description ? 'Error' : "Opis Radnog Mjesta"}
               helperText={errors.description ? errors.description.message : null}
             />

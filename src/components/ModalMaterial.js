@@ -198,7 +198,7 @@ export default function FormDialog({isOpen, close}) {
               className={classes.textFieldRoot}
               type="date"
               fullWidth
-              label={matches && 'Oglas ističe'}
+              label={matches ? 'Oglas ističe' : null}
               onChange={handleInputChange}
               error={errors.expiresIn && errors.expiresIn.message}
               helperText={errors.expiresIn ? errors.expiresIn.message : null}

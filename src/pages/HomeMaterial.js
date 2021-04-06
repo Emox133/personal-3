@@ -4,6 +4,7 @@ import {makeStyles} from '@material-ui/styles'
 import Hero from './../images/home-large-3.jpg'
 import {MemoizedSlider} from './../components/layout/Slider'
 
+import {useAuth} from './../contexts/authContext'
 import {useAdveristments} from './../contexts/adveristmentContext'
 import Loader from '../utils/Loader';
 import AdvertisementsMaterial from './AdvertisementsMaterial';
@@ -64,6 +65,7 @@ const useStyles = makeStyles(theme => ({
 export default function HomeMaterial() {
     const [fields, setFields] = useState({query: ''})
     const classes = useStyles()
+    const {auth} = useAuth()
     const {loading, advertisements} = useAdveristments()
 
     const filteredAdvertisements = advertisements.length > 0 ? advertisements.filter(el => {
@@ -104,7 +106,7 @@ export default function HomeMaterial() {
                 />
             </div>
                 <MemoizedSlider />
-                <CoockieFooter />
+               {auth && <CoockieFooter />}
             <AdvertisementsMaterial filterAd={filteredAdvertisements}/>
       </Container> : <Loader />}
       </>

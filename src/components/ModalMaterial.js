@@ -9,6 +9,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import {makeStyles} from '@material-ui/core/styles'
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 const useStyles = makeStyles(theme => ({
   textFieldRoot: {
@@ -42,6 +43,7 @@ export default function FormDialog({isOpen, close}) {
   })
 
   const classes = useStyles()
+  const matches = useMediaQuery('(max-width:600px)');
 
   const handleImageChange = () => {
     const file = document.getElementById('photo');
@@ -70,9 +72,9 @@ export default function FormDialog({isOpen, close}) {
   const handleSubmit = e => {
     e.preventDefault()
     // CONSIDER ALTERNATIVE
-    formData.append('name', fields.name
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+    // formData.append('name', fields.name
+    // .normalize("NFD")
+    // .replace(/[\u0300-\u036f]/g, "")
     // .replaceAll('Đ', 'Dj')
     // .replaceAll('đ', 'dj'))
     formData.append('photo', fields.photo); 
@@ -196,6 +198,7 @@ export default function FormDialog({isOpen, close}) {
               className={classes.textFieldRoot}
               type="date"
               fullWidth
+              label={matches && 'Oglas ističe'}
               onChange={handleInputChange}
               error={errors.expiresIn && errors.expiresIn.message}
               helperText={errors.expiresIn ? errors.expiresIn.message : null}

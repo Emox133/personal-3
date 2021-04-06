@@ -44,7 +44,7 @@ const AdvertisementMaterial = ({advert}) => {
     const history = useHistory()
     const {getAdvertisement} = useAdveristments()
     const {user, auth} = useAuth()
-    const {logo, _id, creator} = advert
+    const {logo, _id, creator, companyName, name} = advert
 
     const handleClick = (id) => {
         getAdvertisement(id, history)
@@ -66,12 +66,12 @@ const AdvertisementMaterial = ({advert}) => {
                     <CardContent>
                         <Box className={classes.boxRoot}>
                             <Typography gutterBottom variant="h5" component="h2">
-                                {advert.name}
+                                {name}
                             </Typography>
                             {isOwnAdvert() && auth ? <DeleteAdvertisement _id={_id}/> : null}
                         </Box>
                     <Typography variant="body2" color="textSecondary" component="p">
-                        {advert.companyName}
+                        {companyName}
                     </Typography>
                     </CardContent> 
                 </CardActionArea>

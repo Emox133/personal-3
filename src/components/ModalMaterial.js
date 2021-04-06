@@ -231,14 +231,14 @@ export default function FormDialog({isOpen, close}) {
               label={errors.description ? 'Error' : "Opis Radnog Mjesta"}
               helperText={errors.description ? errors.description.message : null}
             />
-        <DialogActions>
+        {/* <DialogActions> */}
           <Button variant="contained" onClick={close} color="secondary">
             Cancel
           </Button>
-          <button variant="contained" type="submit" color="primary">
+          <Button variant="contained" type="submit" color="primary">
             Submit
-          </button>
-        </DialogActions>
+          </Button>
+        {/* </DialogActions> */}
           </form>
         </DialogContent>
       </Dialog>

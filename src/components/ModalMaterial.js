@@ -97,6 +97,7 @@ export default function FormDialog({isOpen, close}) {
         }
     }).catch(err => {
         console.log(err.response)
+        alert(err.response)
         // alert('Something went wrong. 😰')
         const errObj = err.response.status !== 403 ? err.response.data.error.errors : {
             name: '',

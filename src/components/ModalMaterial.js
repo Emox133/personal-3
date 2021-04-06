@@ -18,7 +18,6 @@ const useStyles = makeStyles(theme => ({
 
 export default function FormDialog({isOpen, close}) {
     const [fields, setFields] = useState({
-      photo: '',
       name: '',
       companyName: '',
       companyEmail: '',

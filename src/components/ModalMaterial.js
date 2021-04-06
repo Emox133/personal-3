@@ -235,9 +235,9 @@ export default function FormDialog({isOpen, close}) {
           <Button variant="contained" onClick={close} color="secondary">
             Cancel
           </Button>
-          <Button variant="contained" type="submit" color="primary">
+          <button variant="contained" type="submit" color="primary">
             Submit
-          </Button>
+          </button>
         </DialogActions>
           </form>
         </DialogContent>

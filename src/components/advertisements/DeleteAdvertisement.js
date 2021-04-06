@@ -11,7 +11,6 @@ import Tooltip from '@material-ui/core/Tooltip'
 import {makeStyles} from '@material-ui/core/styles'
 
 import {useAdveristments} from './../../contexts/adveristmentContext'
-import {useAuth} from './../../contexts/authContext'
 
 const useStyles = makeStyles(theme => ({
     iconButtonRoot: {
@@ -22,7 +21,6 @@ const useStyles = makeStyles(theme => ({
 export default function DeleteAdvertisement({_id}) {
   const [open, setOpen] = React.useState(false);
   const classes = useStyles()
-//   const {user: {_id}} = useAuth()
   const {deleteAdvertisement} = useAdveristments()
 
   const handleClickOpen = () => {

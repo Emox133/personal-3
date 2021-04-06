@@ -9,12 +9,13 @@ export const useElementOnScreen = (options) => {
   }
 
   useEffect(() => {
-    
+    var copyRef = containerRef.current
+
     const observer = new IntersectionObserver(callbackFunction, options)
-    if (containerRef.current) observer.observe(containerRef.current)
+    if (copyRef) observer.observe(copyRef)
     
     return () => {
-      if(containerRef.current) observer.unobserve(containerRef.current)
+      if(copyRef) observer.unobserve(copyRef)
     }
   }, [containerRef, options])
 

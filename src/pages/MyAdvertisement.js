@@ -1,7 +1,6 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import {useHistory} from 'react-router-dom'
 import {useAdveristments} from './../contexts/adveristmentContext'
-import {useAuth} from './../contexts/authContext'
 
 import Grid from '@material-ui/core/Grid'
 import Card from '@material-ui/core/Card';

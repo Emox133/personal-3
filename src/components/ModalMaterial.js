@@ -18,6 +18,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function FormDialog({isOpen, close}) {
     const [fields, setFields] = useState({
+      photo: '',
       name: '',
       companyName: '',
       companyEmail: '',
@@ -29,7 +30,6 @@ export default function FormDialog({isOpen, close}) {
       positionsLeft: ''
   })
 
-  // FINISH THIS
   const [errors, setErrors] = useState({
       name: '',
       companyName: '',
@@ -50,7 +50,10 @@ export default function FormDialog({isOpen, close}) {
 
   const handleImage = e => {
     image = e.target.files[0]
-    formData.append('photo', image); 
+    setFields({
+      ...fields,
+      photo: image
+    })
   };
 
   const handleInputChange = (e) => {
@@ -65,7 +68,13 @@ export default function FormDialog({isOpen, close}) {
 
   const handleSubmit = e => {
     e.preventDefault()
-    formData.append('name', fields.name)
+    // CONSIDER ALTERNATIVE
+    formData.append('name', fields.name
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replaceAll('Đ', 'Dj')
+    .replaceAll('đ', 'dj'));
+    formData.append('photo', fields.photo); 
     formData.append('companyName', fields.companyName)
     formData.append('companyEmail', fields.companyEmail)
     formData.append('companyNumber', fields.companyNumber)
@@ -136,29 +145,27 @@ export default function FormDialog({isOpen, close}) {
               type="text"
               fullWidth
               onChange={handleInputChange}
-              error={errors.name.message}
+              error={errors.name && errors.name.message}
               label={errors.name ? 'Error' : 'Pozicija'}
               helperText={errors.name ? errors.name.message : null}
             />
             <TextField
               name="companyName"
               id="companyName"
-              label="Ime Kompanije"
               type="text"
               fullWidth
               onChange={handleInputChange}
-              error={errors.companyName.message}
+              error={errors.companyName && errors.companyName.message}
               label={errors.companyName ? 'Error' : "Ime Kompanije"}
               helperText={errors.companyName ? errors.companyName.message : null}
             />
             <TextField
               name="location"
               id="location"
-              label="Lokacija"
               type="text"
               fullWidth
               onChange={handleInputChange}
-              error={errors.location.message}
+              error={errors.location && errors.location.message}
               label={errors.location ? 'Error' : "Lokacija"}
               helperText={errors.location ? errors.location.message : null}
             />
@@ -173,11 +180,10 @@ export default function FormDialog({isOpen, close}) {
             <TextField
               name="companyEmail"
               id="companyEmail"
-              label="E-Mail Kompanije"
               type="email"
               fullWidth
               onChange={handleInputChange}
-              error={errors.companyEmail.message}
+              error={errors.companyEmail && errors.companyEmail.message}
               label={errors.companyEmail ? 'Error' : "E-Mail Kompanije"}
               helperText={errors.companyEmail ? errors.companyEmail.message : null}
             />
@@ -189,28 +195,26 @@ export default function FormDialog({isOpen, close}) {
               type="date"
               fullWidth
               onChange={handleInputChange}
-              error={errors.expiresIn.message}
+              error={errors.expiresIn && errors.expiresIn.message}
               helperText={errors.expiresIn ? errors.expiresIn.message : null}
             />
             <TextField
               name="positionsLeft"
               id="positionsLeft"
-              label="Broj Slobodnih Mjesta"
               type="text"
               fullWidth
               onChange={handleInputChange}
-              error={errors.positionsLeft.message}
+              error={errors.positionsLeft && errors.positionsLeft.message}
               label={errors.positionsLeft ? 'Error' : "Broj Slobodnih Mjesta"}
               helperText={errors.positionsLeft ? errors.positionsLeft.message : null}
             />
             <TextField
               name="companyNumber"
               id="companyNumber"
-              label="Broj Telefona"
               type="tel"
               fullWidth
               onChange={handleInputChange}
-              error={errors.companyNumber.message}
+              error={errors.companyNumber && errors.companyNumber.message}
               label={errors.companyNumber ? 'Error' : "Broj Telefona"}
               helperText={errors.companyNumber ? errors.companyNumber.message : null}
             />
@@ -219,11 +223,10 @@ export default function FormDialog({isOpen, close}) {
               id="description"
               multiline
               rows="5"
-              label="Opis Radnog Mjesta"
               type="text"
               fullWidth
               onChange={handleInputChange}
-              error={errors.description.message}
+              error={errors.description && errors.description.message}
               label={errors.description ? 'Error' : "Opis Radnog Mjesta"}
               helperText={errors.description ? errors.description.message : null}
             />

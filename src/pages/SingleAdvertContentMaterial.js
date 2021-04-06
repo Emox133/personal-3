@@ -35,7 +35,7 @@ const SingleAdvertContentMaterial = ({advertSingle}) => {
 
     useEffect(() => {
         getAdvertisement(id)
-    }, [id])
+    }, [id, getAdvertisement])
 
     return (
         <>

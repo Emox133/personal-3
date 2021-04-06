@@ -1,11 +1,14 @@
 import React, {useEffect} from 'react'
-import Logo from './../../images/logo.jpg'
+import Banner1 from './../../images/logo-5.png'
+import Banner2 from './../../images/logo-2.png'
+import Banner3 from './../../images/logo-3.png'
+import Banner4 from './../../images/logo-4.png'
 
 const Slider = () => {
     useEffect(() => {
         let counter = 1;
         setInterval(() => {
-            if(window.location.pathname === '/') {
+            if(window.location.pathname && window.location.pathname === '/') {
                 document.getElementById('radio' + counter).checked = true;
             }
             counter++;
@@ -24,16 +27,16 @@ const Slider = () => {
                 <input type="radio" name="radio-btn" id="radio4" />
 
                 <div className="slide first">
-                    <img src={Logo} alt="Logo"/>
+                    <img src={Banner1} alt="Banner"/>
                 </div>
                 <div className="slide">
-                    <img src={Logo} alt="Logo"/>
+                    <img src={Banner2} alt="Banner"/>
                 </div>
                 <div className="slide">
-                    <img src={Logo} alt="Logo"/>
+                    <img src={Banner3} alt="Banner"/>
                 </div>
                 <div className="slide">
-                    <img src={Logo} alt="Logo"/>
+                    <img src={Banner4} alt="Banner"/>
                 </div>
 
                 <div className="navigation-auto">

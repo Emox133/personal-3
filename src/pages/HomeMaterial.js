@@ -2,18 +2,20 @@ import React, {useState} from 'react';
 import {CssBaseline, Typography, Container, TextField} from '@material-ui/core';
 import {makeStyles} from '@material-ui/styles'
 import Hero from './../images/home-large-3.jpg'
+import {MemoizedSlider} from './../components/layout/Slider'
 
 import {useAdveristments} from './../contexts/adveristmentContext'
-// import {useAuth} from './../contexts/authContext'
 import Loader from '../utils/Loader';
 import AdvertisementsMaterial from './AdvertisementsMaterial';
+import CoockieFooter from '../components/layout/CoockieFooter';
 
 const useStyles = makeStyles(theme => ({
     containerRoot: {
         height: 'calc(100vh - 64px)',
         backgroundColor: '#eee',
         position: 'relative',
-        padding: '0'
+        padding: '0',
+        overflowX: 'hidden'
     },
     imageRoot: {
         backgroundImage: `linear-gradient(to right, rgba(94,24,232, .3), rgba(94,24,232, .3)), url(${Hero})`,
@@ -60,13 +62,12 @@ const useStyles = makeStyles(theme => ({
 }))
 
 export default function HomeMaterial() {
-    // const {auth} = useAuth()
     const [fields, setFields] = useState({query: ''})
     const classes = useStyles()
     const {loading, advertisements} = useAdveristments()
 
     const filteredAdvertisements = advertisements.length > 0 ? advertisements.filter(el => {
-        return el.name.includes(fields.query)
+        return el.name.toLowerCase().includes(fields.query.toLowerCase().trim())
     }) : []
 
     const handleChange = e => {
@@ -81,7 +82,7 @@ export default function HomeMaterial() {
   return (
     <>
     <CssBaseline />
-    {!loading ? 
+    {!loading && advertisements ? 
         <Container className={classes.containerRoot} maxWidth="xl">
             <div className={classes.imageRoot}></div>
             <div className={classes.boxRoot}>
@@ -102,6 +103,8 @@ export default function HomeMaterial() {
                     onChange={handleChange}
                 />
             </div>
+                <MemoizedSlider />
+                <CoockieFooter />
             <AdvertisementsMaterial filterAd={filteredAdvertisements}/>
       </Container> : <Loader />}
       </>

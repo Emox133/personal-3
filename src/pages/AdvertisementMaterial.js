@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import {useHistory} from 'react-router-dom'
 import {useAdveristments} from './../contexts/adveristmentContext'
 import {useAuth} from './../contexts/authContext'
@@ -15,10 +15,11 @@ import Typography from '@material-ui/core/Typography';
 import {makeStyles} from '@material-ui/core/styles'
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { Box } from '@material-ui/core'
+import {useElementOnScreen} from './../hooks/useElementOnScreen'
 
 const useStyles = makeStyles(theme => ({
     cardRoot: {
-        margin: '0 auto',
+        margin: '0 auto'
     },
     media: {
         height: 200,
@@ -39,6 +40,7 @@ const useStyles = makeStyles(theme => ({
 const AdvertisementMaterial = ({advert}) => {
     const matches = useMediaQuery('(max-width:600px)');
     const classes = useStyles()
+    const [containerRef, isVisible] = useElementOnScreen()
     const history = useHistory()
     const {getAdvertisement} = useAdveristments()
     const {user, auth} = useAuth()
@@ -51,34 +53,34 @@ const AdvertisementMaterial = ({advert}) => {
     const isOwnAdvert = () => {
         return creator === user._id
     }
-    
+
     return (
-        <Grid item xs={12} sm={6} md={4} lg={3}>
-        <Card className={classes.cardRoot} style={{width: matches ? '70%' : '80%'}}>
-            <CardActionArea>
-                <CardMedia
-                    className={classes.media}
-                    image={logo}
-                    title="Company Logo"
-                />
-                <CardContent>
-                    <Box className={classes.boxRoot}>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            {advert.name}
-                        </Typography>
-                       {isOwnAdvert() && auth ? <DeleteAdvertisement _id={_id}/> : null}
-                    </Box>
-                <Typography variant="body2" color="textSecondary" component="p">
-                    {advert.companyName}
-                </Typography>
-                </CardContent>
-            </CardActionArea>
-            <CardActions>
-                <Button variant="outlined" size="small" color="primary" className={classes.buttonRoot} onClick={() => handleClick(advert._id)}>
-                    Konkuriši
-                </Button>
-            </CardActions>
-        </Card>
+        <Grid ref={containerRef} item xs={12} sm={6} md={4} lg={3}>
+            <Card data-visited={isVisible} className={classes.cardRoot} style={{width: matches ? '70%' : '80%'}}>
+                <CardActionArea>
+                    <CardMedia
+                        className={classes.media}
+                        image={logo}
+                        title="Company Logo"
+                    />
+                    <CardContent>
+                        <Box className={classes.boxRoot}>
+                            <Typography gutterBottom variant="h5" component="h2">
+                                {advert.name}
+                            </Typography>
+                            {isOwnAdvert() && auth ? <DeleteAdvertisement _id={_id}/> : null}
+                        </Box>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                        {advert.companyName}
+                    </Typography>
+                    </CardContent> 
+                </CardActionArea>
+                <CardActions>
+                    <Button variant="outlined" size="small" color="primary" className={classes.buttonRoot} onClick={() => handleClick(advert._id)}>
+                        Konkuriši
+                    </Button>
+                </CardActions>
+            </Card>
         </Grid>
     )
 }

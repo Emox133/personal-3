@@ -2,7 +2,6 @@ import React from 'react'
 import {useAdveristments} from './../contexts/adveristmentContext'
 import {useAuth} from './../contexts/authContext'
 import MyAdvertisement from './MyAdvertisement'
-import NoConnection from './../components/layout/NoConnection'
 
 import Grid from '@material-ui/core/Grid'
 import {makeStyles} from '@material-ui/core/styles'
@@ -10,7 +9,7 @@ import { Typography } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
    gridRoot: {
-       height: 'calc(100vh - 64px)',
+       height: 'calc(100vh - 122.4px)',
        marginTop: '1rem'
    },
    typographyRoot: {

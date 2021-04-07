@@ -16,6 +16,7 @@ import MyAdvertisements from './pages/MyAdvertisements'
 import NoConnection from './components/layout/NoConnection'
 
 axios.defaults.baseURL = 'https://glacial-lake-62293.herokuapp.com/api/v1'
+// axios.defaults.baseURL = 'http://localhost:8000/api/v1'
  
 function App() {
   const {auth, handleLogout, setAuth, fetchUser} = useAuth()

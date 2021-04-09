@@ -56,7 +56,7 @@ const AdvertisementMaterial = ({advert}) => {
 
     return (
         <Grid ref={containerRef} item xs={12} sm={6} md={4} lg={3}>
-            <Card data-visited={isVisible} className={classes.cardRoot} style={{width: matches ? '70%' : '80%'}}>
+            <Card className={classes.cardRoot} onClick={() => handleClick(advert._id)} data-visited={isVisible} style={{width: matches ? '70%' : '80%'}}>
                 <CardActionArea>
                     <CardMedia
                         className={classes.media}
@@ -76,7 +76,7 @@ const AdvertisementMaterial = ({advert}) => {
                     </CardContent> 
                 </CardActionArea>
                 <CardActions>
-                    <Button variant="outlined" size="small" color="primary" className={classes.buttonRoot} onClick={() => handleClick(advert._id)}>
+                    <Button variant="outlined" size="small" color="primary" className={classes.buttonRoot}>
                         Konkuriši
                     </Button>
                 </CardActions>

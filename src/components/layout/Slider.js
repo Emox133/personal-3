@@ -10,7 +10,8 @@ export default function MaterialSlider () {
     const settings =  {
         arrows: false,
         autoplay: true,
-        dots: true
+        dots: true,
+        pauseOnHover: true
     };
 
     const styles = {
@@ -25,16 +26,16 @@ export default function MaterialSlider () {
         <div style={{...styles}}>
         <Slider { ...settings }>
           <div>
-            <img src={Banner1} alt="Company Logo" />
+            <img src={Banner1} alt="Company Logo" className="slider__image" />
           </div>
           <div>
-            <img src={Banner2} alt="Company Logo" />
+            <img src={Banner2} alt="Company Logo" className="slider__image" />
           </div>
           <div>
-            <img src={Banner3} alt="Company Logo" />
+            <img src={Banner3} alt="Company Logo" className="slider__image" />
           </div>
           <div>
-            <img src={Banner4} alt="Company Logo" />
+            <img src={Banner4} alt="Company Logo" className="slider__image" />
           </div>
         </Slider>
       </div>

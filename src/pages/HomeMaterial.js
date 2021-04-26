@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
         overflowX: 'hidden'
     },
     imageRoot: {
-        backgroundImage: `linear-gradient(to right, rgba(94,24,232, .3), rgba(94,24,232, .3)), url(${Hero})`,
+        backgroundImage: `linear-gradient(to right, rgba(94,24,232, .1), rgba(94,24,232, .1)), url(${Hero})`,
         // backgroundImage: `linear-gradient(105deg, rgba(94, 24, 232,.5) 0%, rgba(94, 24, 232,.5) 50%, transparent 50%), url(${Hero})`,
         backgroundPosition: 'center',
         backgroundSize: 'cover',

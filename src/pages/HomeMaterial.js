@@ -45,6 +45,7 @@ const useStyles = makeStyles(theme => ({
     },
     typographyRoot: {
         fontWeight: '300',
+        color: '#000',
         [theme.breakpoints.up('xs')]: {
             fontSize: '1.8rem'
         }

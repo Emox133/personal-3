@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {CssBaseline, Typography, Container, TextField} from '@material-ui/core';
 import {makeStyles} from '@material-ui/styles'
-import Hero from './../images/home-large-3.jpg'
+import Hero from './../images/home-large-5.jpg'
 // import {MemoizedSlider} from './../components/layout/Slider'
 import MaterialSlider from '../components/layout/Slider'
 

@@ -137,7 +137,7 @@ const Signup = () => {
                             type="text"
                             // required
                             placeholder="Username"
-                            name="userName"
+                            name="username"
                             onChange={handleChange}
                             error
                             id="outlined-error-helper-text"
